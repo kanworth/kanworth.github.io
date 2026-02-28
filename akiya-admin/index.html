@@ -1,2 +1,407 @@
 <!doctype html>
 <html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>空き家コンディション確認モデル｜行政連携型予防スキーム</title>
+<meta name="description" content="空き家対策は『まず状態を知る』ことから。行政負担を増やさない・責任明確・案内型の行政連携モデル。公共性を保ちつつ、見やすく伝えるランディングページ。">
+<style>
+  :root{
+    --bg:#f4f7fb;
+    --card:#ffffff;
+    --text:#1b2430;
+    --muted:#5e6b7a;
+    --accent:#0c67d6;
+    --accentSoft:#e6f1ff;
+    --ok:#16a34a;
+    --border:rgba(13,42,73,.12);
+    --shadow:0 10px 25px rgba(0,0,0,.06);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+    background:
+      radial-gradient(900px 500px at 15% -10%, rgba(12,103,214,.16), transparent 55%),
+      radial-gradient(900px 500px at 90% 10%, rgba(22,163,74,.10), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.85;
+  }
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:22px}
+  .topbar{
+    position:sticky;top:0;z-index:10;
+    background:rgba(244,247,251,.85);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-inner{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:900}
+  .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#60a5fa)}
+  .nav{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 14px;border-radius:999px;
+    border:1px solid var(--border);
+    text-decoration:none;font-weight:800;background:#fff;
+    box-shadow:0 6px 14px rgba(0,0,0,.04);
+  }
+  .btn.primary{background:linear-gradient(135deg,var(--accent),#60a5fa);color:#071022;border-color:transparent}
+  .btn.ghost{background:transparent;box-shadow:none}
+  section{
+    background:linear-gradient(180deg, #ffffff, #fbfdff);
+    margin:18px 0;
+    padding:22px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+  }
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 10px;border-radius:999px;
+    background:var(--accentSoft);color:var(--accent);
+    font-size:13px;font-weight:900;
+  }
+  h1{font-size:clamp(26px,3.8vw,44px);line-height:1.2;margin:12px 0 10px}
+  h2{margin:0 0 10px;font-size:20px}
+  h3{margin:0 0 8px;font-size:16px}
+  .muted{color:var(--muted)}
+  .hero{
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:16px;
+    align-items:stretch;
+  }
+  @media (max-width:900px){.hero{grid-template-columns:1fr}}
+  .panel{
+    background:rgba(255,255,255,.95);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:18px;
+  }
+  .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  @media (max-width:720px){.kpi{grid-template-columns:1fr}}
+  .kpi .box{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
+  .kpi .big{font-weight:900}
+  ul{padding-left:18px;margin:10px 0 0}
+  li{margin:6px 0}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+  .col-6{grid-column:span 6}
+  .col-12{grid-column:span 12}
+  @media (max-width:900px){.col-6{grid-column:span 12}}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:12px;
+  }
+  @media (max-width:900px){.flow{grid-template-columns:1fr}}
+  .step{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    text-align:center;
+    font-weight:900;
+  }
+  .num{
+    width:30px;height:30px;border-radius:10px;margin:0 auto 10px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--accentSoft);color:var(--accent);
+    border:1px solid rgba(12,103,214,.18);
+    font-weight:900;
+  }
+  .callout{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .pill{
+    padding:10px 12px;border-radius:12px;border:1px solid rgba(22,163,74,.25);
+    background:rgba(22,163,74,.08);color:#14532d;font-weight:900;
+  }
+  .adminbox{
+    background:#f0f4f8;
+    border-left:4px solid var(--accent);
+    padding:14px;
+    border-radius:12px;
+    margin:10px 0 12px;
+  }
+  .matrix{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:10px;
+  }
+  @media (max-width:900px){.matrix{grid-template-columns:1fr}}
+  .matrix .m{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:12px;
+    background:#fff;
+  }
+  .tag{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 10px;border-radius:999px;
+    background:rgba(22,163,74,.10);
+    border:1px solid rgba(22,163,74,.22);
+    color:#14532d;
+    font-weight:900;font-size:12px;
+  }
+  .contact-card{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:14px;
+    background:#fff;
+  }
+  input, textarea{
+    width:100%;
+    padding:12px;border-radius:12px;border:1px solid var(--border);
+    background:#fff;outline:none;
+    font-size:14px;
+  }
+  textarea{min-height:110px;resize:vertical}
+  .form{display:grid;gap:10px;margin-top:10px}
+  .note{font-size:13px;color:var(--muted)}
+  footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand"><span class="dot"></span> 空き家コンディション確認モデル</div>
+    <div class="nav">
+      <a class="btn ghost" href="#about">概要</a>
+      <a class="btn ghost" href="#admin">行政様へ</a>
+      <a class="btn ghost" href="#flow">流れ</a>
+      <a class="btn primary" href="#contact">相談する</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section>
+  <div class="hero">
+    <div class="panel">
+      <span class="badge">公共性を保つ／行政負担を増やさない案内型</span>
+      <h1>空き家対策は<br><span style="color:var(--accent)">「まず状態を知る」</span>ことから</h1>
+      <p class="muted">
+        売却・活用・解体を前提にしない。<br>
+        まずは<strong>建物のコンディション（状態）</strong>を確認し、放置を減らすための入口を作る。<br>
+        行政は<strong>新たな委託予算を伴わない</strong>形で案内でき、責任分界も明確なモデルです。
+      </p>
+
+      <div class="callout">
+        <div class="pill">活用・不動産の話はしません</div>
+        <div class="pill">大規模工事は前提にしません</div>
+        <div class="pill">まずは状態確認だけ</div>
+      </div>
+
+      <div class="kpi">
+        <div class="box"><div class="big">入口を軽く</div><div class="note">所有者が動きやすい</div></div>
+        <div class="box"><div class="big">行政負担を増やさない</div><div class="note">案内型で運用</div></div>
+        <div class="box"><div class="big">責任明確</div><div class="note">直接契約モデル</div></div>
+      </div>
+
+      <div style="margin-top:14px">
+        <a class="btn primary" href="#contact">まずは相談する</a>
+        <a class="btn" href="#admin">行政様向けを見る</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>よくある状況</h3>
+      <ul>
+        <li>手紙を出しても反応が少ない</li>
+        <li>相談は来るが、その後が動かない</li>
+        <li>外から見えない劣化（腐朽・カビ・シロアリ等）が心配</li>
+        <li>売る／貸す／解体…何から始めればいいか分からない</li>
+      </ul>
+      <p class="note" style="margin-top:10px">
+        → 「状態確認」だけの入口を用意すると、放置を減らせます。
+      </p>
+      <div class="tag" style="margin-top:10px">※ 営業ページではなく「公共モデル説明」です</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>なぜ必要なのか</h2>
+  <div class="grid">
+    <div class="col-6">
+      <h3>行政側の課題</h3>
+      <ul>
+        <li>案内しても所有者が動かない</li>
+        <li>特定空家になる前に止めたい</li>
+        <li>新規予算を増やせない</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <h3>所有者側の心理</h3>
+      <ul>
+        <li>何から始めればいいか分からない</li>
+        <li>いきなり決断は重い</li>
+        <li>費用がいくらか不安</li>
+      </ul>
+    </div>
+  </div>
+  <p class="muted" style="margin-top:10px">
+    だから最初の一歩は、重くしない。<strong>「まず状態を知る」</strong>だけでOKにします。
+  </p>
+</section>
+
+<section>
+  <h2>このモデルで行うこと</h2>
+  <ul>
+    <li>床下・室内の状態確認</li>
+    <li>チェックリスト（空き家コンディション確認報告書）で結果を整理</li>
+    <li>腐朽・カビ・害虫（シロアリ等）の有無確認</li>
+    <li>危険箇所のみ最小限対応（必要な場合）</li>
+    <li>今後どうするか判断できる「材料」を整理</li>
+  </ul>
+  <p style="margin-top:10px">
+    <a class="btn" href="checklist_kanworth.pdf" download>チェックリスト（PDF）を確認する</a>
+  </p>
+  <p class="note">※大規模工事を前提にしません。まず「状態を知る」ための入口です。</p>
+
+  <div class="adminbox" style="margin-top:14px">
+    <b>専門領域</b><br>
+    株式会社カンワースは、床下の状況確認を中心に、<b>シロアリ・腐朽菌・カビ</b>など「見えない劣化」に関する現場対応に強みがあります。<br>
+    本モデルでは、まず状態を整理し、判断に必要な材料をわかりやすくまとめます。
+  </div>
+</section>
+
+<section id="admin">
+  
+<h2>自治体様へ（実務運用を想定した仕組み）</h2>
+<div class="adminbox">
+<b>本モデルは、自治体が契約当事者になることを前提としない運用が可能です。</b><br>
+所有者と事業者が直接やり取りし、必要に応じて契約する仕組みです。<br><br>
+自治体様は「案内・情報提供」を担う形で運用できます。
+</div>
+
+<h3>自治体様の実務負担を増やさない設計</h3>
+<ul>
+<li>申込み受付・日程調整は事業者側で対応</li>
+<li>現地調査・報告書作成まで一括対応</li>
+<li>結果はチェックリスト形式で整理</li>
+<li>必要に応じて自治体様へ概要共有</li>
+</ul>
+
+<h3>予算を活用する場合の設計例</h3>
+<ul>
+<li>住民自己負担型（自治体は案内のみ）</li>
+<li>一部補助型（例：上限○件まで補助）</li>
+<li>周知強化型（チラシ作成・HP掲載など）</li>
+</ul>
+
+<h3>参考価格帯</h3>
+<ul>
+<li>簡易チェックリスト中心：25,000円前後（税別）</li>
+<li>詳細調査・写真記録付：38,000円前後（税別）</li>
+</ul>
+<p class="note">※運用方針・予算状況に応じて協議のうえ調整可能です。</p>
+
+<h3>技術連携体制</h3>
+<p class="muted">
+本モデルは建物状況の確認を主軸とした仕組みです。
+調査結果を踏まえ、建物に関する追加の相談や専門的対応が必要となる場合に備え、
+<strong>有限会社宮前工務店</strong>と連携体制を整えています。
+</p>
+<p class="note">
+※本モデルは改修工事を前提とした制度ではありません。<br>
+※自治体様が契約主体となる仕組みではありません。<br>
+※具体的な対応内容は所有者様と事業者間で協議のうえ決定されます。
+</p>
+
+
+</section>
+
+<section id="flow">
+  <h2>流れ（シンプル）</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div>行政が案内</div>
+    <div class="step"><div class="num">2</div>所有者が連絡</div>
+    <div class="step"><div class="num">3</div>状態確認（チェックリスト）</div>
+    <div class="step"><div class="num">4</div>今後判断</div>
+  </div>
+</section>
+
+<section>
+  
+<h2>導入までの進め方（実務想定）</h2>
+
+<div class="grid">
+<div class="col-6">
+<h3>ステップ1：試験導入</h3>
+<ul>
+<li>まずは年間数件規模で開始</li>
+<li>運用フロー確認（受付～報告）</li>
+<li>問題点の整理と改善</li>
+</ul>
+</div>
+
+<div class="col-6">
+<h3>ステップ2：本格運用検討</h3>
+<ul>
+<li>実績データの整理（件数・相談傾向）</li>
+<li>補助制度への組込み検討</li>
+<li>近隣自治体への横展開</li>
+</ul>
+</div>
+</div>
+
+<p class="note">※いきなり制度化せず、試験的に始めることを前提としています。</p>
+
+</section>
+
+<section id="contact">
+  <h2>運営・お問い合わせ</h2>
+  <p class="muted">まずは「状態確認」の相談から。公共モデルとして運用しやすい形で調整できます。</p>
+
+  <div class="grid">
+    <div class="col-6">
+      <div class="contact-card">
+        <div style="font-weight:900;font-size:16px">運営：株式会社カンワース</div>
+        <div class="note">※本ページは「公共モデル説明」です（営業ページではありません）</div>
+        <div style="height:10px"></div>
+        <div>電話：<a href="tel:0000000000">【電話番号】</a></div>
+        <div>メール：<a href="mailto:example@example.com">【メールアドレス】</a></div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="contact-card">
+        <div style="font-weight:900">フォーム（仮）</div>
+        <div class="note">※実運用は既存フォーム（Googleフォーム等）に差し替え可</div>
+
+        <form class="form" action="#" method="post" onsubmit="return fakeSubmit(event)">
+          <input name="name" placeholder="お名前" required>
+          <input name="contact" placeholder="電話 or メール" required>
+          <input name="address" placeholder="空き家の所在地（わかる範囲で）">
+          <textarea name="message" placeholder="状況（例：長期間空き家／雨漏りが心配／床下が不安 など）"></textarea>
+          <button class="btn primary" type="submit">送信する</button>
+          <div id="formMsg" class="note" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 空き家コンディション確認モデル（行政連携型予防スキーム）
+</footer>
+
+</div>
+
+<script>
+function fakeSubmit(e){
+  e.preventDefault();
+  const el = document.getElementById('formMsg');
+  el.textContent = "送信ボタンの動作は仮です。運用フォームに差し替えてください。";
+  return false;
+}
+</script>
+
+</body>
+</html>
