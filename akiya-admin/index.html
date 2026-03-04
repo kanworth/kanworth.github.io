@@ -161,6 +161,25 @@
   textarea{min-height:110px;resize:vertical}
   .form{display:grid;gap:10px;margin-top:10px}
   .note{font-size:13px;color:var(--muted)}
+  @media (max-width:720px){
+
+.nav{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.nav .btn{
+text-align:center;
+font-size:13px;
+padding:8px 8px;
+}
+
+.nav .btn.primary{
+grid-column:1 / -1;
+}
+
+}
   footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:13px}
 </style>
 </head>
