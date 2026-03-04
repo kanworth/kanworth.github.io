@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>自治体様向け｜空き家コンディション確認モデル</title>
-<meta name="description" content="自治体様向け：空き家コンディション確認モデルの実務運用（案内→申込み→現地確認→報告）を整理した説明ページ。自治体が契約当事者にならない運用も想定。">
-
+<title>空き家コンディション確認モデル｜自治体様向け</title>
+<meta name="description" content="空き家コンディション確認モデル（自治体様向け）。実務運用の流れ、チェックリスト、報告書サンプル、導入設計を整理。">
 <style>
   :root{
     --bg:#f4f7fb;
@@ -14,6 +13,7 @@
     --muted:#5e6b7a;
     --accent:#0c67d6;
     --accentSoft:#e6f1ff;
+    --ok:#16a34a;
     --border:rgba(13,42,73,.12);
     --shadow:0 10px 25px rgba(0,0,0,.06);
     --radius:14px;
@@ -37,10 +37,7 @@
     backdrop-filter: blur(10px);
     border-bottom:1px solid var(--border);
   }
-  .topbar-inner{
-    max-width:1080px;margin:0 auto;padding:12px 22px;
-    display:flex;align-items:center;justify-content:space-between;gap:10px
-  }
+  .topbar-inner{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:10px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:900}
   .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#60a5fa)}
   .nav{display:flex;gap:10px;flex-wrap:wrap}
@@ -50,7 +47,6 @@
     border:1px solid var(--border);
     text-decoration:none;font-weight:800;background:#fff;
     box-shadow:0 6px 14px rgba(0,0,0,.04);
-    white-space:nowrap;
   }
   .btn.primary{background:linear-gradient(135deg,var(--accent),#60a5fa);color:#071022;border-color:transparent}
   .btn.ghost{background:transparent;box-shadow:none}
@@ -62,16 +58,10 @@
     box-shadow:var(--shadow);
     border:1px solid var(--border);
   }
-  h1{font-size:clamp(24px,3.2vw,38px);line-height:1.25;margin:0 0 10px}
+  h1{font-size:clamp(22px,3.2vw,34px);line-height:1.2;margin:12px 0 10px}
   h2{margin:0 0 10px;font-size:20px}
   h3{margin:0 0 8px;font-size:16px}
   .muted{color:var(--muted)}
-  .badge{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:6px 10px;border-radius:999px;
-    background:var(--accentSoft);color:var(--accent);
-    font-size:13px;font-weight:900;
-  }
   .adminbox{
     background:#f0f4f8;
     border-left:4px solid var(--accent);
@@ -85,7 +75,12 @@
   .kpi .big{font-weight:900}
   ul{padding-left:18px;margin:10px 0 0}
   li{margin:6px 0}
-  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:12px;
+  }
   @media (max-width:900px){.flow{grid-template-columns:1fr}}
   .step{
     background:var(--bg);
@@ -102,27 +97,22 @@
     border:1px solid rgba(12,103,214,.18);
     font-weight:900;
   }
-  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-  .col-6{grid-column:span 6}
-  .col-12{grid-column:span 12}
-  @media (max-width:900px){.col-6{grid-column:span 12}}
   .note{font-size:13px;color:var(--muted)}
   footer{padding:28px 0 10px;text-align:center;color:var(--muted);font-size:13px}
 </style>
 </head>
-
 <body>
 <a id="top"></a>
 
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="brand"><span class="dot"></span> 自治体様向け：空き家コンディション確認モデル</div>
+    <div class="brand"><span class="dot"></span> 自治体様向け｜空き家コンディション確認モデル</div>
     <div class="nav">
-      <a class="btn ghost" href="index.html">所有者向けページへ</a>
-      
-      <a class="btn ghost" href="#ops">実務フロー</a>
-      <a class="btn ghost" href="#admin">制度・運用整理</a>
-      <a class="btn primary" href="#contact">連絡先</a>
+      <a class="btn ghost" href="index.html">所有者ページへ戻る</a>
+      <a class="btn ghost" href="#admin">仕組み</a>
+      <a class="btn ghost" href="#flow">流れ</a>
+      <a class="btn ghost" href="#docs">資料</a>
+      <a class="btn primary" href="#contact">相談する</a>
     </div>
   </div>
 </div>
@@ -130,56 +120,14 @@
 <div class="wrap">
 
 <section>
-  <span class="badge">自治体様向け整理ページ</span>
-  <h1>「どのようにこのページへ促すか」まで含めて<br>実務運用を整理した説明ページです</h1>
+  <h1>自治体様へ（実務運用を想定した仕組み）</h1>
   <p class="muted">
-    本ページは、自治体様が所有者様へ案内する際の「導線（促し方）」と、<br>
-    申込み〜現地確認〜報告までの運用を、短く把握できる形でまとめたものです。
+    本ページは、自治体様が案内・情報提供を行う際に必要となる「運用の形」「確認範囲」「成果物（チェックリスト／報告書）」を整理したものです。
   </p>
-  <div class="adminbox">
-    <b>ポイント：</b>自治体様は <b>案内・情報提供</b> を担い、受付〜日程調整〜調査〜報告は事業者側で対応する運用が可能です。<br>
-    ※自治体が契約当事者になることを前提としない設計も想定しています。
-  </div>
-</section>
-
-
-
-<section id="ops">
-  <h2>実務フロー（試行導入向け：最短パターン）</h2>
-  <div class="flow">
-    <div class="step"><div class="num">1</div>自治体が案内<br><span class="note">通知・HP掲載等</span></div>
-    <div class="step"><div class="num">2</div>所有者が相談<br><span class="note">事業者へ連絡</span></div>
-    <div class="step"><div class="num">3</div>現地確認<br><span class="note">チェックリスト</span></div>
-    <div class="step"><div class="num">4</div>報告・判断材料<br><span class="note">簡易報告書</span></div>
-  </div>
-
-  <div class="grid" style="margin-top:12px">
-    <div class="col-6">
-      <h3>現地確認の範囲（例）</h3>
-      <ul>
-        <li>外観・屋根（高所確認機器など）</li>
-        <li>床下点検口確認／含水率（ピン式）</li>
-        <li>湿気・通風・管理状況（簡易）</li>
-        <li>シロアリ・腐朽・カビ等の兆候確認（目視中心）</li>
-      </ul>
-      <p class="note">※危険箇所がある場合は、その場で「最小限の注意喚起」までを想定（工事を前提にしません）。</p>
-    </div>
-
-    <div class="col-6">
-      <h3>結果の共有（例）</h3>
-      <ul>
-        <li>チェックリスト形式で整理（PDF/印刷可）</li>
-        <li>必要に応じて写真記録を添付（詳細版）</li>
-        <li>所有者へ「次の判断材料」を提示（管理/活用/修繕の考え方）</li>
-        <li>自治体へは概要共有（運用方針に応じて）</li>
-      </ul>
-      <p class="note">※個人情報・物件情報の扱いは、自治体様の運用ルールに合わせて整理します。</p>
-    </div>
-  </div>
 </section>
 
 <section id="admin">
-  <h2>自治体様へ（制度・運用の整理）</h2>
+  <h2>基本構造</h2>
   <p class="muted">本モデルの基本構造は以下の通りです。</p>
 
   <div class="kpi">
@@ -189,11 +137,11 @@
     </div>
     <div class="box">
       <div class="big">案内型で運用</div>
-      <div class="note">行政負担を増やさない</div>
+      <div class="note">自治体は情報提供に集中</div>
     </div>
     <div class="box">
       <div class="big">責任分界</div>
-      <div class="note">自治体は契約主体にならない設計も可</div>
+      <div class="note">所有者直接契約型</div>
     </div>
   </div>
 
@@ -206,9 +154,9 @@
   <h3>自治体様の実務負担を増やさない設計</h3>
   <ul>
     <li>申込み受付・日程調整は事業者側で対応</li>
-    <li>現地調査・報告書作成まで一括対応</li>
+    <li>現地確認・報告書作成まで一括対応</li>
     <li>結果はチェックリスト形式で整理</li>
-    <li>必要に応じて自治体様へ概要共有</li>
+    <li>必要に応じて自治体様へ概要共有（範囲は協議）</li>
   </ul>
 
   <h3>予算を活用する場合の設計例</h3>
@@ -227,8 +175,8 @@
 
   <h3>技術連携体制</h3>
   <p class="muted">
-    調査結果を踏まえ、建物に関する追加の相談や専門的対応が必要となる場合に備え、<br>
-    <strong>有限会社 宮前工務店（建築工事）</strong>と連携体制を整えています。
+    調査結果を踏まえ、建物に関する追加の相談や専門的対応が必要となる場合に備え、
+    <strong>有限会社宮前工務店</strong>と連携体制を整えています。
   </p>
   <p class="note">
     ※本モデルは改修工事を前提とした制度ではありません。<br>
@@ -237,37 +185,114 @@
   </p>
 </section>
 
+<section id="flow">
+  <h2>流れ（シンプル）</h2>
+  <div class="flow">
+    <div class="step"><div class="num">1</div>自治体が案内</div>
+    <div class="step"><div class="num">2</div>所有者が連絡</div>
+    <div class="step"><div class="num">3</div>状態確認（チェックリスト）</div>
+    <div class="step"><div class="num">4</div>今後判断</div>
+  </div>
+</section>
+
+<section id="docs">
+  <h2>資料</h2>
+
+  <p style="margin-top:10px">
+    <a class="btn" href="akiya_checklist.pdf" target="_blank" rel="noopener">チェックリスト（PDF）を確認する</a>
+  </p>
+  <p class="note">※チェック項目・確認範囲・成果物イメージの共有用です。</p>
+
+  <hr style="margin:30px 0;">
+
+  <h3>報告書サンプル（抜粋・チェックリスト様式準拠）</h3>
+  <div style="border:1px solid #ccc; padding:20px; background:#fafafa; font-size:14px; line-height:1.7;">
+    <b>空き家コンディション確認報告書（抜粋）</b><br><br>
+    ■ 調査日：令和〇年〇月〇日<br>
+    ■ 所在地：茨城県〇〇市〇〇<br>
+    ■ 実施者：株式会社カンワース<br>
+    ■ 調査方法：外観確認・屋根確認（高所確認機器使用）・床下点検口確認・含水率測定<br><br>
+
+    <b>【建物外部】</b><br>
+    ・屋根：目視範囲で大きな破損なし<br>
+    ・外壁：軽微な劣化あり<br>
+    ・雨漏り痕：確認されず<br><br>
+
+    <b>【床下状況（チェックリスト準拠）】</b><br>
+    ・北側外周部 含水率：18.5％（正常範囲内）<br>
+    ・南側外周部 含水率：17.9％（正常範囲内）<br>
+    ・浴室周辺 含水率：21.3％（注意域）<br>
+    ・中央部：異常なし<br>
+    ・排水配管周辺：漏水痕なし<br>
+    ・換気口遠位部：空気滞留傾向あり<br><br>
+
+    <b>【生物被害確認】</b><br>
+    ・シロアリ蟻道：確認されず<br>
+    ・腐朽菌の発生：確認されず<br><br>
+
+    <b>【管理状況】</b><br>
+    ・敷地内雑草：中程度<br>
+    ・近隣への越境：なし<br>
+    ・通風状況：閉鎖状態が長期間継続している可能性あり<br><br>
+
+    <b>【総合所見】</b><br>
+    本確認時点において、直ちに行政措置を要する危険性は認められません。<br>
+    ただし、長期未管理による湿度滞留の可能性があるため、定期的な通風および再確認を推奨いたします。<br><br>
+
+    ※本書は確認時点の状況を整理したものであり、将来の状態を保証するものではありません。<br>
+  </div>
+</section>
+
+<section>
+  <h2>導入までの進め方（実務想定）</h2>
+  <div style="display:grid; gap:14px;">
+    <div>
+      <h3>ステップ1：小規模運用</h3>
+      <ul>
+        <li>まずは年間数件規模で開始</li>
+        <li>運用フロー確認（受付～報告）</li>
+        <li>問題点の整理と改善</li>
+      </ul>
+    </div>
+    <div>
+      <h3>ステップ2：本格運用検討</h3>
+      <ul>
+        <li>実績データの整理（件数・相談傾向）</li>
+        <li>補助制度への組込み検討</li>
+        <li>近隣自治体への横展開</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="note">※まずは小規模運用から開始し、運用状況を確認しながら段階的に拡張していく形を想定しています。</p>
+</section>
+
 <section id="contact">
-  <h2>お問い合わせ（事業者窓口）</h2>
-  <p class="muted">試行導入（数件）からの実施・運用整理の打合せも可能です。</p>
+  <h2>お問い合わせ</h2>
 
   <p><a class="btn" href="tel:05068612342">☎ 代表番号 050-6861-2342</a></p>
   <p><a class="btn" href="tel:08042096104">📱 担当直通 080-4209-6104</a></p>
-  <p><a class="btn" href="mailto:info@kan-worth.co.jp?subject=空き家コンディション確認モデル（自治体様向け）お問い合わせ">✉ メールで問い合わせる</a></p>
-  <p>
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScauw0gMPRarUU7IthjYPfeaW0bS2l2jZATzQggG18QxQDRTw/viewform" target="_blank" rel="noopener">
-      📝 フォームで問い合わせる
-    </a>
-  </p>
+  <p><a class="btn" href="mailto:info@kan-worth.co.jp?subject=空き家コンディション確認（自治体向け）の問い合わせ">✉ メールで問い合わせる</a></p>
+  <p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScauw0gMPRarUU7IthjYPfeaW0bS2l2jZATzQggG18QxQDRTw/viewform" target="_blank" rel="noopener">📝 フォームで問い合わせる</a></p>
 
   <p style="text-align:center; margin-top:18px;">
     <a class="btn" href="javascript:void(0)" onclick="window.scrollTo(0,0);">▲ トップへ戻る</a>
   </p>
 
-  <div style="font-size:13px; line-height:1.7; margin-top:12px;">
+  <hr style="margin:20px 0;">
+
+  <div style="font-size:13px; line-height:1.7;">
     <b>運営</b><br>
     株式会社カンワース<br>
     〒300-1233<br>
     所在地：茨城県つくば市梅園2-1-15 スプリングテックビル4F<br>
-    TEL：050-6861-2342 ／ FAX：029-874-5870<br>
+    TEL：050-6861-2342／FAX：029-874-5870<br>
     代表：手賀俊行<br>
     <span style="opacity:.8;">© 2026 空き家コンディション確認モデル</span>
   </div>
 </section>
 
-<footer>
-  こちらは自治体様向けの運用整理ページです（所有者様向けページは index.html）。
-</footer>
+<footer>自治体様向けページ（admin.html）</footer>
 
 </div>
 </body>
