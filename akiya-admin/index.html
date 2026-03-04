@@ -163,20 +163,37 @@
   .note{font-size:13px;color:var(--muted)}
   @media (max-width:720px){
 
-.nav{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-}
+  /* ここが重要：ブランドとボタン群を上下に分ける */
+  .topbar-inner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
 
-.nav .btn{
-text-align:center;
-font-size:13px;
-padding:8px 8px;
-}
+  .brand{
+    justify-content: flex-start;
+  }
 
-.nav .btn.primary{
-grid-column:1 / -1;
+  /* navは2列固定で3行以内にする */
+  .nav{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap:8px;
+  }
+
+  .nav .btn{
+    width:100%;
+    text-align:center;
+    font-size:13px;
+    padding:8px 8px;
+    white-space:nowrap;
+  }
+
+  /* primaryだけ1行を使って目立たせる */
+  .nav .btn.primary{
+    grid-column:1 / -1;
+  }
 }
 
 }
@@ -205,16 +222,19 @@ grid-column:1 / -1;
     <div class="panel">
       <span class="badge">公共性を保つ／行政負担を増やさない案内型</span>
       <h1>空き家対策は<br><span style="color:var(--accent)">「まず状態を知る」</span>ことから</h1>
-      <p class="muted">
-        売却・活用・解体を前提にしない。<br>
-        まずは<strong>建物のコンディション（状態）</strong>を確認し、放置を減らすための入口を作る。<br>
-  <div class="callout" style="margin-top:14px">
+        <p class="muted">
+  売却・活用・解体を前提にしない。<br>
+  まずは<strong>建物のコンディション（状態）</strong>を確認し、放置を減らすための入口を作る。<br>
+</p>
+
+<div class="callout" style="margin-top:14px">
   <a class="btn primary" href="#owner">空き家をお持ちの方はこちら</a>
   <a class="btn" href="#admin">自治体様はこちら</a>
 </div>
+
 <p class="note" style="margin-top:8px">
   ※ご相談・状態確認のお申込みはページ下部の「お問い合わせ」から行えます。
-</p>      
+</p> 
       </p>
 <hr style="margin:40px 0;">
 
@@ -266,10 +286,7 @@ grid-column:1 / -1;
 
      
 
-      <div style="margin-top:14px">
-        <a class="btn primary" href="#contact">まずは相談する</a>
-        
-      </div>
+      
     </div>
 
     <div class="panel">
