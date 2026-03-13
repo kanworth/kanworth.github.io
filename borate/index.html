@@ -1,55 +1,551 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>株式会社カンワース | ホウ酸工事</title>
+  <title>株式会社カンワース｜床下ホウ酸処理・シロアリ予防・防腐防カビ</title>
+  <meta name="description" content="床下のシロアリ予防、木部の防腐・防カビ対策なら株式会社カンワース。ホウ酸処理を中心に、床下環境の確認から必要に応じた補修・リノベーションのご提案まで対応します。" />
   <style>
-    body{font-family:sans-serif;margin:0;line-height:1.7;color:#333;}
-    header{background:#0f766e;color:#fff;padding:48px 20px;text-align:center;}
-    section{max-width:1000px;margin:0 auto;padding:48px 20px;}
-    h2{margin-bottom:16px;}
-    .btn{display:inline-block;background:#0f766e;color:#fff;padding:12px 20px;
-         text-decoration:none;border-radius:8px;}
-    .box{background:#f7f7f7;padding:20px;border-radius:12px;margin:16px 0;}
-    footer{background:#222;color:#fff;text-align:center;padding:24px 20px;}
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: #f8faf8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #1f6f43;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #1f6f43;
+      color: #1f6f43;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: bold;
+      background: #fff;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e4e7e4;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #1f6f43;
+    }
+
+    nav a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #e8f5ec 0%, #f9fcfa 100%);
+      padding: 70px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.35;
+      margin: 0 0 20px;
+      color: #173d27;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      margin: 0 0 18px;
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      border: 1px solid #ebefeb;
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      color: #1f6f43;
+    }
+
+    .hero-list {
+      padding-left: 1.2em;
+      margin: 0;
+    }
+
+    .hero-list li {
+      margin-bottom: 8px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin: 0 0 14px;
+      color: #173d27;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      margin: 0 auto 40px;
+      max-width: 760px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+      border: 1px solid #edf0ed;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #1f6f43;
+      font-size: 1.15rem;
+    }
+
+    .highlight {
+      background: #eef8f1;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #ebefeb;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .flow-step {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #ebefeb;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      text-align: center;
+    }
+
+    .step-num {
+      display: inline-block;
+      width: 38px;
+      height: 38px;
+      line-height: 38px;
+      border-radius: 50%;
+      background: #1f6f43;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .price-box {
+      background: #173d27;
+      color: #fff;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
+
+    .price-box h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .price-box ul {
+      padding-left: 1.2em;
+      margin-bottom: 0;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #1f6f43 0%, #295f40 100%);
+      color: #fff;
+      text-align: center;
+      border-radius: 24px;
+      padding: 50px 30px;
+    }
+
+    .cta h2 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    footer {
+      background: #173d27;
+      color: #fff;
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .notice {
+      background: #fff7e8;
+      border: 1px solid #f1d9a9;
+      border-radius: 12px;
+      padding: 16px 18px;
+      color: #6a521d;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .two-col,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 50px 0;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>床下のシロアリ・腐朽・カビ対策ならホウ酸工事</h1>
-    <p>株式会社カンワース</p>
-    <a class="btn" href="#contact">お問い合わせ</a>
+    <div class="container header-inner">
+      <div class="logo">株式会社カンワース</div>
+      <nav>
+        <a href="#trouble">お悩み</a>
+        <a href="#about">ホウ酸工事とは</a>
+        <a href="#strength">当社の強み</a>
+        <a href="#flow">施工の流れ</a>
+        <a href="#price">料金目安</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>こんなお悩みありませんか？</h2>
-    <div class="box">床下が湿っている / シロアリが心配 / 木材の腐朽やカビが気になる</div>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>床下のシロアリ・腐朽・カビ対策を、<br>ホウ酸工事という選択で。</h1>
+        <p>
+          株式会社カンワースでは、床下の状態確認からホウ酸処理、防腐・防カビ対策、
+          必要に応じた補修やリノベーションのご相談まで一貫して対応しています。
+        </p>
+        <p>
+          ただ薬剤をまくだけではなく、<strong>床下環境全体を見て判断する施工</strong>を大切にしています。
+        </p>
+        <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
+          <a class="btn" href="#contact">無料相談はこちら</a>
+          <a class="btn-outline" href="#about">ホウ酸工事について見る</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>このような方におすすめです</h3>
+        <ul class="hero-list">
+          <li>床下の湿気や木部の傷みが気になる</li>
+          <li>シロアリ予防をしっかり考えたい</li>
+          <li>カビや腐朽もまとめて相談したい</li>
+          <li>小さなお子さまやペットがいて気になる</li>
+          <li>リフォーム前後に床下を確認したい</li>
+        </ul>
+        <div class="notice">
+          現地状況によって必要な施工内容は異なります。まずは床下の状態確認からご相談ください。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trouble">
+    <div class="container">
+      <h2 class="section-title">こんなお悩みありませんか？</h2>
+      <p class="section-subtitle">
+        床下は普段見えない場所だからこそ、異変に気づきにくい部分です。
+        気になった時点で一度確認しておくことが大切です。
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>床下が湿っていそう</h3>
+          <p>浴室まわりや北側で湿気がこもり、木材の傷みやカビが進んでいないか不安。</p>
+        </div>
+        <div class="card">
+          <h3>シロアリが心配</h3>
+          <p>築年数が経ってきた、周辺で発生を聞いた、過去に被害があったなど予防を考えたい。</p>
+        </div>
+        <div class="card">
+          <h3>補修まで相談したい</h3>
+          <p>床下だけでなく、木部の腐朽やリフォームも含めてまとめて相談したい。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="highlight">
+    <div class="container">
+      <h2 class="section-title">ホウ酸工事とは</h2>
+      <p class="section-subtitle">
+        木材を保護し、シロアリ・腐朽・カビ対策を考えるうえで、床下環境を踏まえて施工を行う考え方です。
+      </p>
+
+      <div class="two-col">
+        <div class="box">
+          <h3>ホウ酸工事の考え方</h3>
+          <p>
+            ホウ酸処理は、木部保護の一つの考え方として注目されている施工です。
+            住宅の状況に応じて、シロアリ予防だけでなく、湿気や木部状態も踏まえて判断することが重要です。
+          </p>
+          <p>
+            カンワースでは、単純な散布や施工だけで終わらせず、
+            <strong>床下全体の状態を見たうえで必要な対策を整理</strong>します。
+          </p>
+        </div>
+
+        <div class="box">
+          <h3>このような場合にご相談ください</h3>
+          <ul>
+            <li>シロアリ予防を検討している</li>
+            <li>床下点検後に湿気や木部劣化が気になった</li>
+            <li>リフォーム時にあわせて床下を整えたい</li>
+            <li>防カビや木部保護も一緒に考えたい</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="strength">
+    <div class="container">
+      <h2 class="section-title">カンワースの強み</h2>
+      <p class="section-subtitle">
+        ホウ酸だけではなく、床下・木部・補修・リノベーションまで見られるのが当社の特徴です。
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>床下環境全体を見て判断</h3>
+          <p>シロアリだけでなく、湿気、腐朽、カビ、木部状態も含めて現場を確認します。</p>
+        </div>
+        <div class="card">
+          <h3>補修・原状回復にも対応</h3>
+          <p>傷みが見つかった場合も、必要に応じて補修や内装・リノベーションのご相談が可能です。</p>
+        </div>
+        <div class="card">
+          <h3>現場経験を活かした提案</h3>
+          <p>机上の説明ではなく、実際の施工現場で培った経験をもとに、現実的なご提案を行います。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow" class="highlight">
+    <div class="container">
+      <h2 class="section-title">施工の流れ</h2>
+      <p class="section-subtitle">
+        お問い合わせから施工後のご説明まで、わかりやすくご案内します。
+      </p>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <h3>お問い合わせ</h3>
+          <p>まずはお電話・メールでご相談ください。</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <h3>現地確認</h3>
+          <p>床下の状態や気になる点を確認します。</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <h3>ご提案・お見積り</h3>
+          <p>必要な施工内容を整理してご案内します。</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <h3>施工</h3>
+          <p>内容をご納得いただいた上で施工します。</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">5</div>
+          <h3>完了説明</h3>
+          <p>施工内容と今後の注意点をご説明します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="container">
+      <h2 class="section-title">料金目安</h2>
+      <p class="section-subtitle">
+        建物の状況や施工範囲により異なります。詳細は現地確認後にご案内いたします。
+      </p>
+
+      <div class="two-col">
+        <div class="price-box">
+          <h3>参考価格の考え方</h3>
+          <ul>
+            <li>床下面積</li>
+            <li>被害や劣化の有無</li>
+            <li>木部の状態</li>
+            <li>湿気・カビの状況</li>
+            <li>追加補修の有無</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>ご案内</h3>
+          <p>
+            料金は住宅ごとの状態によって変わるため、まずは状況を確認したうえでご案内しています。
+          </p>
+          <p>
+            「予防として考えたい」「床下を一度見てほしい」「補修も含めて相談したい」
+            という段階でも問題ありません。
+          </p>
+          <p class="small">
+            ※ 正式なお見積りは現地確認後となります。<br>
+            ※ 被害状況や施工条件により内容は変動します。
+          </p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section>
-    <h2>カンワースの強み</h2>
-    <div class="box">ホウ酸処理・防カビ・リノベーションまで一貫対応</div>
-  </section>
+    <div class="container">
+      <h2 class="section-title">対応エリア</h2>
+      <p class="section-subtitle">
+        つくば市を拠点に、周辺地域のご相談に対応しています。詳細はお問い合わせください。
+      </p>
 
-  <section>
-    <h2>施工内容</h2>
-    <div class="box">床下点検、木部処理、予防施工、状況に応じた補修提案</div>
+      <div class="box" style="max-width: 760px; margin: 0 auto;">
+        <p>
+          茨城県南エリアを中心に対応しております。<br>
+          現場内容やご依頼状況により、近隣地域もご相談可能です。
+        </p>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>お問い合わせ</h2>
-    <div class="box">
-      株式会社カンワース<br>
-      担当：手賀<br>
-      TEL：000-0000-0000<br>
-      MAIL：example@example.com
+    <div class="container">
+      <div class="cta">
+        <h2>床下の不安、まずはご相談ください</h2>
+        <p>
+          シロアリ、湿気、木部の傷み、カビ、補修のことまで、
+          現場に合わせてご案内いたします。
+        </p>
+        <div style="margin-top: 24px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a class="btn" href="tel:0000000000">電話で相談する</a>
+          <a class="btn-outline" href="mailto:example@example.com" style="background:#fff;">メールで問い合わせる</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.95rem;">
+          ※ 電話番号・メールアドレスは実際のものに変更してください
+        </p>
+      </div>
     </div>
   </section>
 
   <footer>
-    © 株式会社カンワース
+    <div class="container">
+      <p><strong>株式会社カンワース</strong></p>
+      <p>床下ホウ酸処理・シロアリ予防・防腐防カビ・補修相談</p>
+      <p>所在地：茨城県つくば市（必要に応じて正式住所へ差し替え）</p>
+      <p>TEL：000-0000-0000 ／ MAIL：example@example.com</p>
+      <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.85;">© Kanworth All Rights Reserved.</p>
+    </div>
   </footer>
+
 </body>
 </html>
