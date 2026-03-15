@@ -842,7 +842,36 @@
             <li>追加補修の有無</li>
           </ul>
         </div>
+<div class="box" style="max-width: 760px; margin: 30px auto 0;">
+  <h3 style="margin-top:0; color:#1f6f43;">簡単見積もりシミュレーター</h3>
+  <p>
+    床下面積を入力すると、概算金額の目安を自動表示します。<br>
+    ※正式なお見積もりは現地確認後となります。
+  </p>
 
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px;">
+    <div>
+      <label for="sqmInput" style="font-weight:bold; display:block; margin-bottom:6px;">㎡で入力</label>
+      <input id="sqmInput" type="number" placeholder="例：30"
+        style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px;">
+    </div>
+
+    <div>
+      <label for="tsuboInput" style="font-weight:bold; display:block; margin-bottom:6px;">坪で入力</label>
+      <input id="tsuboInput" type="number" placeholder="例：10"
+        style="width:100%; padding:12px; border:1px solid #ccc; border-radius:8px;">
+    </div>
+  </div>
+
+  <div style="margin-top:20px; background:#f6faf7; border:1px solid #dfe8e1; border-radius:12px; padding:18px;">
+    <p style="margin:0 0 8px;"><strong>換算面積：</strong><span id="convertedArea">-</span></p>
+    <p style="margin:0 0 8px;"><strong>概算金額：</strong><span id="estimatePrice">-</span></p>
+    <p class="small" style="margin-top:10px;">
+      ※ 参考単価：1㎡あたり 3,100円で計算<br>
+      ※ 被害状況、施工条件、追加補修の有無により変動します。
+    </p>
+  </div>
+</div>
         <div class="box">
           <h3>ご案内</h3>
           <p>
@@ -944,5 +973,52 @@
 <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
 ↑
 </button>
+  <script>
+  const sqmInput = document.getElementById("sqmInput");
+  const tsuboInput = document.getElementById("tsuboInput");
+  const convertedArea = document.getElementById("convertedArea");
+  const estimatePrice = document.getElementById("estimatePrice");
+
+  const unitPrice = 3100; // 1㎡あたり単価
+  const tsuboToSqm = 3.30579;
+
+  function formatYen(value) {
+    return "約 " + Math.round(value).toLocaleString("ja-JP") + " 円";
+  }
+
+  function formatArea(value) {
+    return value.toFixed(2) + " ㎡";
+  }
+
+  function updateFromSqm() {
+    const sqm = parseFloat(sqmInput.value);
+    if (!isNaN(sqm) && sqm > 0) {
+      tsuboInput.value = (sqm / tsuboToSqm).toFixed(2);
+      convertedArea.textContent = formatArea(sqm);
+      estimatePrice.textContent = formatYen(sqm * unitPrice);
+    } else {
+      tsuboInput.value = "";
+      convertedArea.textContent = "-";
+      estimatePrice.textContent = "-";
+    }
+  }
+
+  function updateFromTsubo() {
+    const tsubo = parseFloat(tsuboInput.value);
+    if (!isNaN(tsubo) && tsubo > 0) {
+      const sqm = tsubo * tsuboToSqm;
+      sqmInput.value = sqm.toFixed(2);
+      convertedArea.textContent = formatArea(sqm);
+      estimatePrice.textContent = formatYen(sqm * unitPrice);
+    } else {
+      sqmInput.value = "";
+      convertedArea.textContent = "-";
+      estimatePrice.textContent = "-";
+    }
+  }
+
+  sqmInput.addEventListener("input", updateFromSqm);
+  tsuboInput.addEventListener("input", updateFromTsubo);
+</script>
 </body>
 </html>
