@@ -441,6 +441,24 @@
         text-align: center;
       }
     }
+ #topBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #1f6f43;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+#topBtn:hover {
+  background: #174f30;
+}
   </style>
 </head>
 <body>
@@ -923,6 +941,8 @@
       <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.85;">© Kanworth All Rights Reserved.</p>
     </div>
   </footer>
-
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+↑
+</button>
 </body>
 </html>
