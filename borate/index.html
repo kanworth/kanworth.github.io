@@ -861,20 +861,58 @@
     </p>
   </div>
 </div>
-        <div class="box">
-          <h3>ご案内</h3>
-          <p>
-            料金は住宅ごとの状態によって変わるため、まずは状況を確認したうえでご案内しています。
-          </p>
-          <p>
-            「予防として考えたい」「床下を一度見てほしい」「補修も含めて相談したい」
-            という段階でも問題ありません。
-          </p>
-          <p class="small">
-            ※ 正式なお見積りは現地確認後となります。<br>
-            ※ 被害状況や施工条件により内容は変動します。
-          </p>
-        </div>
+       <script>
+  const sqmInput = document.getElementById("sqmInput");
+  const tsuboInput = document.getElementById("tsuboInput");
+  const convertedArea = document.getElementById("convertedArea");
+  const estimatePrice = document.getElementById("estimatePrice");
+
+  const unitPrice = 3400;      // 1㎡あたり単価
+  const minimumArea = 50;      // 50㎡未満でも50㎡で計算
+  const tsuboToSqm = 3.30579;
+
+  function formatYen(value) {
+    return "約 " + Math.round(value).toLocaleString("ja-JP") + " 円";
+  }
+
+  function formatArea(value) {
+    return value.toFixed(2) + " ㎡";
+  }
+
+  function updateFromSqm() {
+    const sqm = parseFloat(sqmInput.value);
+    if (!isNaN(sqm) && sqm > 0) {
+      const billableArea = Math.max(sqm, minimumArea);
+      tsuboInput.value = (sqm / tsuboToSqm).toFixed(2);
+      convertedArea.textContent = formatArea(sqm) + "（計算上は " + formatArea(billableArea) + "）";
+      estimatePrice.textContent = formatYen(billableArea * unitPrice);
+    } else {
+      tsuboInput.value = "";
+      convertedArea.textContent = "-";
+      estimatePrice.textContent = "-";
+    }
+  }
+
+  function updateFromTsubo() {
+    const tsubo = parseFloat(tsuboInput.value);
+    if (!isNaN(tsubo) && tsubo > 0) {
+      const sqm = tsubo * tsuboToSqm;
+      const billableArea = Math.max(sqm, minimumArea);
+      sqmInput.value = sqm.toFixed(2);
+      convertedArea.textContent = formatArea(sqm) + "（計算上は " + formatArea(billableArea) + "）";
+      estimatePrice.textContent = formatYen(billableArea * unitPrice);
+    } else {
+      sqmInput.value = "";
+      convertedArea.textContent = "-";
+      estimatePrice.textContent = "-";
+    }
+  }
+
+  if (sqmInput && tsuboInput) {
+    sqmInput.addEventListener("input", updateFromSqm);
+    tsuboInput.addEventListener("input", updateFromTsubo);
+  }
+</script> 
       </div>
     <div class="box" style="margin-top:30px;">
   <h3 style="margin-top:0; color:#1f6f43;">保証について</h3>
@@ -981,7 +1019,7 @@
   const convertedArea = document.getElementById("convertedArea");
   const estimatePrice = document.getElementById("estimatePrice");
 
-  const unitPrice = 3100; // 1㎡あたり単価
+  const unitPrice = 3400; // 1㎡あたり単価
   const tsuboToSqm = 3.30579;
 
   function formatYen(value) {
