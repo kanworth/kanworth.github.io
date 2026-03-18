@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>防カビ対策・カビ除去・防カビ塗装なら株式会社カンワース｜茨城県つくば市</title>
+  <meta name="description" content="カビ除去、防カビ施工、防カビ塗装、木部・クロス・コンクリートのカビ対策なら株式会社カンワース。住宅・工場・病院・倉庫など幅広く対応。茨城県つくば市を拠点にご相談・お見積り受付中。" />
+  <style>
+    :root{
+      --primary:#0b5d52;
+      --primary-dark:#083f38;
+      --accent:#dff5ef;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --bg:#f7faf9;
+      --white:#ffffff;
+      --danger:#a11d2f;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:18px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.75;
+    }
+
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;border-radius:14px;}
+
+    .container{
+      width:min(var(--max),calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      background:var(--primary-dark);
+      color:#fff;
+      font-size:14px;
+      padding:10px 0;
+    }
+
+    .topbar-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(229,231,235,.8);
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      padding:14px 0;
+    }
+
+    .logo{
+      font-weight:700;
+      font-size:22px;
+      color:var(--primary-dark);
+    }
+
+    .logo small{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:400;
+      letter-spacing:.05em;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      font-size:14px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn:hover{transform:translateY(-1px);}
+    .btn-primary{background:var(--primary);color:#fff;box-shadow:var(--shadow);}
+    .btn-secondary{background:#fff;border-color:var(--primary);color:var(--primary);}
+    .btn-line{background:#15b96b;color:#fff;}
+
+    .hero{
+      background:linear-gradient(135deg, rgba(11,93,82,.93), rgba(8,63,56,.92)), url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color:#fff;
+      padding:84px 0 72px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-block;
+      background:rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.22);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-size:clamp(32px,5vw,54px);
+      line-height:1.2;
+      letter-spacing:.02em;
+    }
+
+    .lead{
+      font-size:18px;
+      color:rgba(255,255,255,.92);
+      margin-bottom:22px;
+    }
+
+    .hero-points{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px 14px;
+      padding:0;
+      list-style:none;
+      margin:22px 0 28px;
+      font-size:15px;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card h2{
+      margin-top:0;
+      font-size:22px;
+    }
+
+    .hero-card ul{
+      margin:0;
+      padding-left:18px;
+    }
+
+    section{padding:74px 0;}
+    .section-head{text-align:center;max-width:780px;margin:0 auto 42px;}
+    .section-head .eyebrow{color:var(--primary);font-weight:700;letter-spacing:.08em;font-size:13px;}
+    .section-head h2{font-size:clamp(28px,4vw,40px);margin:10px 0 12px;line-height:1.3;}
+    .section-head p{color:var(--muted);margin:0;}
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:22px;
+    }
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .card h3{margin-top:0;font-size:20px;color:var(--primary-dark);}
+    .card p{margin-bottom:0;color:var(--muted);}
+
+    .strip{
+      background:#fff;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .problem-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
+    }
+
+    .problem{
+      background:#fff;
+      border:1px solid var(--line);
+      border-left:6px solid var(--danger);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:24px;
+      position:relative;
+      box-shadow:var(--shadow);
+    }
+
+    .step-number{
+      width:42px;height:42px;border-radius:50%;
+      background:var(--primary);color:#fff;font-weight:700;
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:14px;
+    }
+
+    .comparison{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .comparison .card{height:100%;}
+    .check{margin:0;padding-left:18px;}
+    .check li{margin-bottom:8px;}
+
+    .areas{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .area{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    .cta{
+      background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+      color:#fff;
+      border-radius:28px;
+      padding:42px;
+      box-shadow:var(--shadow);
+    }
+
+    .cta h2{margin-top:0;font-size:clamp(28px,4vw,38px);}
+    .cta p{color:rgba(255,255,255,.9);}
+    .cta-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px;}
+
+    .faq{
+      display:grid;
+      gap:16px;
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px 20px;
+      box-shadow:var(--shadow);
+    }
+
+    summary{cursor:pointer;font-weight:700;color:var(--primary-dark);}
+    details p{margin:12px 0 0;color:var(--muted);}
+
+    .contact{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .contact-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-box h3{margin-top:0;}
+    .contact-list{list-style:none;padding:0;margin:0;}
+    .contact-list li{padding:8px 0;border-bottom:1px dashed var(--line);}
+    .contact-list li:last-child{border-bottom:none;}
+
+    footer{
+      background:#0f172a;
+      color:rgba(255,255,255,.86);
+      padding:36px 0;
+      margin-top:60px;
+    }
+
+    .note{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:14px;
+    }
+
+    @media (max-width:960px){
+      .hero-grid,.cards,.flow,.areas,.contact,.comparison{grid-template-columns:1fr 1fr;}
+      .hero-card{order:-1;}
+    }
+
+    @media (max-width:720px){
+      .nav{align-items:flex-start;}
+      .nav-links{display:none;}
+      .hero{padding:62px 0 56px;}
+      .hero-grid,.cards,.problem-grid,.flow,.areas,.contact,.comparison{grid-template-columns:1fr;}
+      .hero-points{grid-template-columns:1fr;}
+      .cta{padding:28px;}
+      section{padding:58px 0;}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div>住宅・工場・病院・倉庫などのカビ対策に対応</div>
+      <div>TEL: 050-6861-2342 ／ Mail: info@kan-worth.co.jp</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#top" class="logo">
+        株式会社カンワース
+        <small>防カビ対策・カビ除去・防カビ塗装</small>
+      </a>
+      <nav class="nav-links">
+        <a href="#trouble">こんなお悩み</a>
+        <a href="#strength">選ばれる理由</a>
+        <a href="#flow">施工の流れ</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#contact" class="btn btn-primary">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">カビから人と建物を守る、防カビ専門施工</span>
+          <h1>見た目だけで終わらせない。<br>原因に向き合う防カビ対策。</h1>
+          <p class="lead">株式会社カンワースは、住宅・工場・病院・倉庫など幅広い現場で、カビ除去・防カビ施工・防カビ塗装に対応しています。表面だけの清掃ではなく、再発防止まで見据えた施工をご提案します。</p>
+          <ul class="hero-points">
+            <li>✓ 木部・クロス・コンクリート・タイル目地に対応</li>
+            <li>✓ 住宅から施設まで幅広く対応</li>
+            <li>✓ 防カビ塗料・殺菌処理・予防施工に対応</li>
+            <li>✓ ご相談・お見積り対応</li>
+          </ul>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;">
+            <a href="#contact" class="btn btn-primary">無料相談をする</a>
+            <a href="#flow" class="btn btn-secondary">施工の流れを見る</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>このような場所でご相談があります</h2>
+          <ul>
+            <li>浴室・洗面所・結露のある部屋</li>
+            <li>食品工場の加工室・保管室</li>
+            <li>病院の病室・浴室・脱衣所</li>
+            <li>倉庫・公共施設・ホテル脱衣所</li>
+          </ul>
+          
+        </div>
+      </div>
+    </section>
+
+    <section class="strip" id="trouble">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">TROUBLE</div>
+          <h2>こんなお悩みはありませんか？</h2>
+          <p>カビは見た目の問題だけでなく、衛生面・建物劣化・再発リスクにもつながります。</p>
+        </div>
+        <div class="problem-grid">
+          <div class="problem">浴室や洗面所の黒カビが何度掃除しても再発する</div>
+          <div class="problem">クロスや木部にカビが広がり、見た目と臭いが気になる</div>
+          <div class="problem">工場や倉庫で衛生管理上の不安がある</div>
+          <div class="problem">一般的な塗料や清掃だけでは不安が残る</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="strength">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">STRENGTH</div>
+          <h2>カンワースの防カビ施工が選ばれる理由</h2>
+          
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>1. 再発防止を見据えた施工</h3>
+            <p>カビを落とすだけでなく、防カビ処理やコーティングまで視野に入れ、現場に応じた対策を行います。</p>
+          </article>
+          <article class="card">
+            <h3>2. 幅広い素材に対応</h3>
+            <p>木部、石膏ボード、合板、クロス、モルタル、コンクリート、タイル目地など、さまざまな部位に対応します。</p>
+          </article>
+          <article class="card">
+            <h3>3. 住宅から施設まで対応</h3>
+            <p>住居だけでなく、食品工場、病院、倉庫、公共施設など、衛生管理が求められる場所にも対応可能です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">COMPARISON</div>
+          <h2>一般的な対処との違い</h2>
+          <p>表面清掃だけで終わると、見た目は一時的に改善しても再発しやすいことがあります。</p>
+        </div>
+        <div class="comparison">
+          <div class="card">
+            <h3>よくある対処</h3>
+            <ul class="check">
+              <li>表面清掃のみで終わる</li>
+              <li>素材との相性が考慮されない</li>
+              <li>予防・再発防止が弱い</li>
+              <li>場所ごとのリスク差が反映されにくい</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>カンワースの考え方</h3>
+            <ul class="check">
+              <li>除去・殺菌・防カビの流れで検討</li>
+              <li>木部・クロス・コンクリート等に応じて施工</li>
+              <li>再発防止を意識した処理を提案</li>
+              <li>住宅・工場・病院など環境ごとに対応</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">FLOW</div>
+          <h2>防カビ施工の流れ</h2>
+          <p>初めての方にもわかりやすいよう、相談から施工までをシンプルに整理しました。</p>
+        </div>
+        <div class="flow">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>ご相談</h3>
+            <p>カビの場所、範囲、建物の種類などをお伺いします。</p>
+          </article>
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>現場確認・ご提案</h3>
+            <p>必要に応じて現場の状態を確認し、施工方法をご提案します。</p>
+          </article>
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>施工</h3>
+            <p>除去、殺菌、防カビ塗装やコーティングなど、状況に応じて対応します。</p>
+          </article>
+          <article class="step">
+            <div class="step-number">04</div>
+            <h3>完了・ご説明</h3>
+            <p>施工内容と今後の注意点をわかりやすくご案内します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="strip">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">AREA</div>
+          <h2>主な対応場所</h2>
+          <p>現在のサイトで案内されている内容を、見やすいカード形式に整理しています。</p>
+        </div>
+        <div class="areas">
+          <div class="area">
+            <h3>住居</h3>
+            <p>浴室、台所、洗面所、結露のある部屋など</p>
+          </div>
+          <div class="area">
+            <h3>食品工場</h3>
+            <p>加工室、製造室、保管室など</p>
+          </div>
+          <div class="area">
+            <h3>病院</h3>
+            <p>病室、浴室、脱衣所など</p>
+          </div>
+          <div class="area">
+            <h3>その他施設</h3>
+            <p>倉庫、公共施設、ホテル、ゴルフ場浴室など</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2>カビの再発にお困りなら、まずはご相談ください。</h2>
+          <p>現場や素材によって最適な方法は変わります。住宅・施設を問わず、状態に応じた防カビ対策をご提案します。</p>
+          <div class="cta-actions">
+            <a href="tel:05068612342" class="btn btn-primary">電話で相談する</a>
+            <a href="mailto:info@kan-worth.co.jp" class="btn btn-secondary">メールで問い合わせる</a>
+            <a href="#contact" class="btn btn-line">連絡先を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="strip">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">FAQ</div>
+          <h2>よくある質問</h2>
+          <p>問い合わせ前に気になりやすい点を、LP向けに追加しています。</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>見積りだけでもお願いできますか？</summary>
+            <p>はい。現場状況やご希望内容を確認したうえでご案内します。</p>
+          </details>
+          <details>
+            <summary>住宅以外でも対応できますか？</summary>
+            <p>はい。既存サイトでも案内されている通り、工場・病院・倉庫・公共施設なども対象です。</p>
+          </details>
+          <details>
+            <summary>カビを落とすだけではなく予防もできますか？</summary>
+            <p>状況に応じて、防カビ処理や防カビ塗装など再発防止を意識したご提案を行います。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">CONTACT</div>
+          <h2>お問い合わせ</h2>
+          <p>ご質問・ご相談・お見積り依頼など、お気軽にご連絡ください。</p>
+        </div>
+        <div class="contact">
+          <div class="contact-box">
+            <h3>連絡先</h3>
+            <ul class="contact-list">
+              <li><strong>メール</strong><br>info@kan-worth.co.jp</li>
+              <li><strong>電話</strong><br>050-6861-2342</li>
+              <li><strong>会社名</strong><br>株式会社カンワース</li>
+            </ul>
+          </div>
+          <div class="contact-box">
+            <h3>所在地</h3>
+            <ul class="contact-list">
+              <li><strong>本社</strong><br>〒305-0045 茨城県つくば市梅園2-1-15 スプリングテックつくばビル4F</li>
+              <li><strong>牛久開発・管理センター</strong><br>茨城県牛久市栄町2-9-2</li>
+              <li><strong>神奈川支店</strong><br>神奈川県横浜市西区北幸二丁目10番48号 むつみビル3階</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">※ 公開中サイトの掲載内容をもとに再構成したLP用HTMLたたき台です。実際に公開する際は、施工写真、実績、対象エリア、フォームURL、LINE導線などを追加するとさらに強くなります。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="font-weight:700;margin-bottom:8px;">株式会社カンワース</div>
+      <div>防カビ対策・カビ除去・防カビ塗装</div>
+      <div style="margin-top:10px;font-size:13px;opacity:.8;">Copyright © 株式会社カンワース. All Rights Reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
