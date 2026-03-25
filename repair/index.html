@@ -2,23 +2,23 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>外壁補修・住宅リペアなら株式会社カンワース｜つくば市・茨城県</title>
-<meta name="description" content="つくば市・茨城県で外壁補修・住宅リペアなら株式会社カンワース。ひび割れ、欠け、ビス穴、配線跡、サビ、腐食、水回りの劣化など、現場確認をもとに必要な施工のみをご提案します。">
+<title>住宅リペア・外壁補修なら株式会社カンワース｜つくば市・茨城県</title>
+<meta name="description" content="つくば市・茨城県で住宅リペア・外壁補修なら株式会社カンワース。欠け・ひび割れ・ビス穴・配線跡・腐食・水回りの傷みなど、現場確認のうえ必要な施工のみをご提案。補修だけで終わらず、カビ・床下・ホウ酸・空き家確認まで建物全体で考えます。">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", Arial, sans-serif;
-  line-height:1.8;
+  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",Arial,sans-serif;
+  line-height:1.9;
   color:#333;
-  background:#f5f5f5;
+  background:#f4f4f4;
 }
 
 header{
-  background:linear-gradient(135deg, #2f2f2f, #4b4b4b);
+  background:linear-gradient(135deg,#2f2f2f,#555);
   color:#fff;
-  padding:48px 20px 40px;
+  padding:54px 20px 42px;
   text-align:center;
 }
 
@@ -29,24 +29,26 @@ header h1{
 }
 
 header p{
-  margin:0;
+  margin:0 auto;
+  max-width:900px;
   font-size:1rem;
   opacity:0.95;
 }
 
-nav{
-  background:#ffffff;
-  border-bottom:1px solid #e5e5e5;
+.top-links{
+  background:#fff;
+  border-bottom:1px solid #ddd;
   text-align:center;
-  padding:12px 10px;
+  padding:14px 10px;
 }
 
-nav a{
-  color:#444;
+.top-links a{
+  display:inline-block;
+  margin:4px 10px;
+  color:#6d533d;
   text-decoration:none;
-  margin:0 10px;
+  font-weight:700;
   font-size:0.95rem;
-  font-weight:600;
 }
 
 .container{
@@ -57,8 +59,8 @@ nav a{
 
 section{
   background:#fff;
-  margin:0 0 22px;
-  padding:26px 22px;
+  margin-bottom:22px;
+  padding:28px 22px;
   border-radius:14px;
   box-shadow:0 4px 14px rgba(0,0,0,0.05);
 }
@@ -67,8 +69,14 @@ h2{
   margin:0 0 16px;
   font-size:1.5rem;
   color:#222;
-  border-left:6px solid #8c7b68;
+  border-left:6px solid #8a7058;
   padding-left:12px;
+}
+
+h3{
+  margin:20px 0 10px;
+  font-size:1.15rem;
+  color:#333;
 }
 
 p{
@@ -77,7 +85,7 @@ p{
 
 ul{
   margin:0;
-  padding-left:20px;
+  padding-left:22px;
 }
 
 li{
@@ -85,22 +93,25 @@ li{
 }
 
 .lead{
-  font-size:1.05rem;
+  font-size:1.06rem;
 }
 
-.note-box{
-  background:#f7f4ef;
-  border:1px solid #e6ddd1;
+.story-box{
+  background:#f7f3ee;
+  border:1px solid #e7ddd1;
 }
 
+.case-images,
 .grid-2{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px;
+  margin-top:14px;
 }
 
+.case-images img,
 .grid-2 img,
-.case-images img{
+.single-image img{
   width:100%;
   height:auto;
   display:block;
@@ -108,26 +119,61 @@ li{
   box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
-.case-images{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
+.single-image{
   margin-top:14px;
 }
 
 .case-label{
   display:inline-block;
-  background:#8c7b68;
+  background:#8a7058;
   color:#fff;
-  font-size:0.85rem;
+  font-size:0.84rem;
   padding:4px 10px;
   border-radius:999px;
   margin-bottom:10px;
 }
 
+.point-list{
+  background:#faf8f4;
+  border:1px solid #ece3d7;
+  border-radius:10px;
+  padding:16px;
+  margin-top:12px;
+}
+
+.flow{
+  counter-reset:step;
+}
+
+.flow-item{
+  position:relative;
+  padding:16px 16px 16px 62px;
+  margin-bottom:14px;
+  background:#faf8f4;
+  border-radius:10px;
+  border:1px solid #ece3d7;
+}
+
+.flow-item::before{
+  counter-increment:step;
+  content:counter(step);
+  position:absolute;
+  left:16px;
+  top:16px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#8a7058;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
 .cta{
   text-align:center;
-  background:linear-gradient(135deg, #faf7f2, #f2eee8);
+  background:linear-gradient(135deg,#fbf8f3,#f2ede6);
 }
 
 .btn{
@@ -143,22 +189,22 @@ li{
 
 .service-links a{
   display:block;
-  margin:8px 0;
-  color:#7b6247;
+  margin:10px 0;
+  color:#6d533d;
   text-decoration:none;
-  font-weight:600;
+  font-weight:700;
 }
 
 footer{
   text-align:center;
   color:#666;
   font-size:0.9rem;
-  padding:20px 16px 40px;
+  padding:18px 16px 42px;
 }
 
 @media (max-width: 768px){
   header{
-    padding:38px 16px 32px;
+    padding:40px 16px 34px;
   }
 
   header h1{
@@ -169,63 +215,92 @@ footer{
     padding:22px 16px;
   }
 
-  .grid-2,
-  .case-images{
+  .case-images,
+  .grid-2{
     grid-template-columns:1fr;
   }
 
-  nav a{
-    display:inline-block;
-    margin:4px 8px;
+  .flow-item{
+    padding:16px 14px 16px 56px;
   }
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>外壁補修・住宅リペア</h1>
-  <p>つくば市・茨城県対応｜株式会社カンワース</p>
+  <h1>住宅リペア・外壁補修</h1>
+  <p>
+    つくば市・茨城県で、外壁の欠け・配線跡・ビス穴・腐食・水回りの傷みなど、
+    「全部交換まではしたくないけれど、きちんと直したい」という補修に対応しています。
+    株式会社カンワースは、補修だけで終わらせず、建物全体の状態も踏まえてご提案します。
+  </p>
 </header>
 
-<nav>
+<div class="top-links">
   <a href="https://kanworth.github.io/">会社案内</a>
   <a href="https://kanworth.github.io/borate/">ホウ酸処理</a>
   <a href="https://kanworth.github.io/mold/">カビ対策</a>
   <a href="https://kanworth.github.io/akiya/">空き家コンディション確認</a>
-</nav>
+  <a href="https://kanworth.github.io/renovation/">リノベーション</a>
+</div>
 
 <div class="container">
 
   <section>
-    <h2>住宅リペア・補修工事について</h2>
+    <h2>このページでお伝えしたいこと</h2>
     <p class="lead">
-      株式会社カンワースでは、外壁の欠け・ひび割れ・ビス穴・配線跡・サビ・腐食・水回りの劣化など、
-      住宅のさまざまな補修に対応しています。
+      リペア工事は、ただ見た目を整えるだけの工事ではありません。
     </p>
     <p>
-      リペア工事は、状態によって
-      「補修で済むのか」「部材交換が必要なのか」「再施工が適しているのか」
-      の判断が変わります。
+      現場では、
+      「この傷みは補修で済むのか」
+      「交換が必要なのか」
+      「そもそも別の原因があるのか」
+      を判断することが大切です。
     </p>
     <p>
-      当社では現場確認を行い、<strong>必要な施工のみをご提案</strong>しています。
-      見た目だけでなく、その後の劣化の進み方も考えながら施工します。
+      このページでは、カンワースのリペア工事を
+      <strong>施工事例だけでなく、考え方や流れも含めて</strong>わかりやすくご紹介します。
     </p>
   </section>
 
-  <section class="note-box">
-    <h2>このような症状に対応しています</h2>
+  <section class="story-box">
+    <h2>リペア工事が必要になる場面</h2>
+    <p>
+      建物では、長年の使用や設備交換、雨風、湿気、水漏れなどによって、
+      さまざまな傷みが出てきます。
+    </p>
     <ul>
-      <li>外壁のひび割れ・欠け</li>
-      <li>ビス穴・配線跡・設備撤去跡</li>
-      <li>サビ・腐食・傷み</li>
-      <li>水回りの劣化・腐食</li>
-      <li>小規模な原状回復工事</li>
-      <li>部分補修で直せるかどうかの判断</li>
+      <li>設備を外した後の配線跡やビス穴</li>
+      <li>外壁の欠け、割れ、目立つ跡</li>
+      <li>水回りの腐食やふくらみ</li>
+      <li>部分的な傷みだけれど気になる箇所</li>
+      <li>全部交換するほどではないが、このままにはしたくない箇所</li>
     </ul>
     <p>
+      こうした場面で役立つのが、部分補修やリペア工事です。
+    </p>
+  </section>
+
+  <section>
+    <h2>なぜ「補修」という選択になるのか</h2>
+    <p>
+      現場でよくあるのが、
+      「全部やり替えないとダメです」と言われてしまうケースです。
+    </p>
+    <p>
+      しかし実際には、状態をよく確認すると
+      <strong>補修で十分対応できるケース</strong>も多くあります。
+    </p>
+    <p>
+      カンワースでは、まず現場を確認し、
+      「本当に交換が必要なのか」
+      「補修で対応できるのか」
+      を見極めます。
+    </p>
+    <p>
+      その結果、必要以上の工事をせずに済むこともあります。
       小さな補修から対応していますので、
       「こんなこと頼んでいいのかな？」という内容でもご相談ください。
     </p>
@@ -237,8 +312,13 @@ footer{
   <section>
     <h2>実際の作業風景</h2>
     <p>
-      現場の状況に合わせて、一つ一つ手作業で補修を行っています。
-      現場ごとに状態が異なるため、状況を確認しながら最適な方法で施工しています。
+      リペア工事は、既製品を取り付けるだけの仕事ではありません。
+      現場の状態を見ながら、傷み方や素材、周囲との見え方を確認し、
+      一つ一つ手作業で整えていきます。
+    </p>
+    <p>
+      現場ごとに状態が違うため、同じように見える補修でも進め方は変わります。
+      こうした積み重ねが、仕上がりの差につながります。
     </p>
 
     <div class="grid-2">
@@ -251,7 +331,8 @@ footer{
     <h2>施工事例① 外壁補修</h2>
     <span class="case-label">施工前・施工後</span>
     <p>
-      設備撤去後の跡や劣化部分を補修し、できるだけ自然に見えるよう仕上げた事例です。
+      設備撤去後の跡や外壁の劣化部分を補修した事例です。
+      目立つ部分をできるだけ自然に整え、外観の印象を改善しました。
     </p>
 
     <div class="case-images">
@@ -264,7 +345,9 @@ footer{
     <h2>施工事例② 外壁の跡補修</h2>
     <span class="case-label">施工前・施工後</span>
     <p>
-      外壁に残ってしまった跡や不自然な部分を補修し、周囲となじむように整えた事例です。
+      外壁に残った跡や不自然な部分を補修した事例です。
+      部分的な傷みでも、放置すると見た目の印象が大きく変わるため、
+      早めの対応が有効な場合があります。
     </p>
 
     <div class="case-images">
@@ -277,8 +360,8 @@ footer{
     <h2>施工事例③ 水回りの腐食補修</h2>
     <span class="case-label">施工前・施工後</span>
     <p>
-      水漏れや湿気などが原因で傷んだ箇所を補修した事例です。
-      見た目だけでなく、今後の状態も考えて対応します。
+      水回りでは、見えている傷みの奥に湿気や漏水の影響が隠れていることもあります。
+      そのため、表面だけで判断せず、原因も意識しながら補修することが大切です。
     </p>
 
     <div class="case-images">
@@ -287,13 +370,122 @@ footer{
     </div>
   </section>
 
+  <section class="story-box">
+    <h2>補修だけでは終わらないケースもあります</h2>
+    <p>
+      一方で、リペアだけでは根本解決にならないケースもあります。
+    </p>
+    <p>
+      たとえば、
+    </p>
+    <ul>
+      <li>湿気が原因で劣化している</li>
+      <li>カビが発生しやすい環境になっている</li>
+      <li>床下の状態が悪い</li>
+      <li>シロアリや腐朽のリスクがある</li>
+      <li>空き家で建物全体の管理が必要になっている</li>
+    </ul>
+    <p>
+      このような場合は、表面だけ直しても同じ症状が繰り返されることがあります。
+    </p>
+  </section>
+
+  <section>
+    <h2>建物全体で考えることが大切です</h2>
+    <p>
+      カンワースでは、リペア工事を単体で考えるのではなく、
+      建物全体の状態を見ながらご提案しています。
+    </p>
+
+    <div class="flow">
+      <div class="flow-item">
+        <h3>部分補修で対応できるかを見る</h3>
+        <p>
+          まずは今見えている傷みが、補修で対応できる範囲なのかを確認します。
+        </p>
+      </div>
+
+      <div class="flow-item">
+        <h3>傷みの原因を考える</h3>
+        <p>
+          ただの表面の傷なのか、湿気・水漏れ・通気不良・床下環境などが関係しているのかを考えます。
+        </p>
+      </div>
+
+      <div class="flow-item">
+        <h3>必要に応じて他の対策につなげる</h3>
+        <p>
+          カビ対策、ホウ酸処理、空き家コンディション確認など、
+          建物の状態に合った対策へ自然につなげます。
+        </p>
+      </div>
+
+      <div class="flow-item">
+        <h3>最終的には建物全体の改善へ</h3>
+        <p>
+          部分補修だけでなく、必要に応じてリノベーションまで見据えてご案内します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>リペアから自然につながる関連サービス</h2>
+    <p>
+      リペアは入口になることが多く、その先に別の対策が必要になることがあります。
+      カンワースでは、以下のようなサービスと連動してご提案できます。
+    </p>
+
+    <div class="point-list">
+      <h3>ホウ酸処理</h3>
+      <p>
+        木部の劣化やシロアリ、腐朽が気になる場合は、
+        建物を長持ちさせるためのホウ酸処理をご提案できます。
+      </p>
+      <p><a href="https://kanworth.github.io/borate/">→ ホウ酸処理LPを見る</a></p>
+
+      <h3>カビ対策・防カビ施工</h3>
+      <p>
+        湿気や通気不良が関係している場合は、
+        補修後の再発防止も見据えてカビ対策が必要になることがあります。
+      </p>
+      <p><a href="https://kanworth.github.io/mold/">→ カビ対策LPを見る</a></p>
+
+      <h3>空き家コンディション確認</h3>
+      <p>
+        空き家や管理が行き届いていない建物では、
+        補修箇所だけでなく全体の状態確認が重要になることがあります。
+      </p>
+      <p><a href="https://kanworth.github.io/akiya/">→ 空き家コンディション確認LPを見る</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>最終的には、建物全体を整えるリノベーションへ</h2>
+    <p>
+      部分的な補修から始まったご相談でも、
+      状況によっては「この機会に建物全体を整えたい」という話になることがあります。
+    </p>
+    <p>
+      カンワースでは、
+      <strong>リペア・ホウ酸・カビ対策・空き家確認</strong>を別々に考えるのではなく、
+      最終的に建物全体を整えるリノベーションへつなげていく考え方を大切にしています。
+    </p>
+    <p>
+      これから公開予定のリノベーションLPでは、
+      これらのサービスを横断して、建物をどう長く使っていくかをまとめてご紹介します。
+    </p>
+    <p><a href="https://kanworth.github.io/renovation/">→ リノベーションLPへ</a></p>
+  </section>
+
   <section>
     <h2>カンワースの特徴</h2>
     <ul>
       <li>現場経験をもとに、補修・交換・再施工の判断を行います。</li>
-      <li>リペアだけでなく、リノベーション、カビ対策、床下環境確認などにも連動できます。</li>
-      <li>必要以上の工事をすすめず、現場に合った内容をご案内します。</li>
-      <li>見た目の改善だけでなく、その後の劣化や使い方も考慮して対応します。</li>
+      <li>見た目だけでなく、その後の劣化や再発も意識して対応します。</li>
+      <li>リペア単体で終わらず、建物全体の状態に合わせた提案ができます。</li>
+      <li>ホウ酸、カビ対策、空き家確認、リノベーションまで連動できます。</li>
+      <li>必要以上の工事はすすめず、状態に合った方法をご案内します。</li>
     </ul>
   </section>
 
@@ -303,34 +495,36 @@ footer{
       つくば市を中心に、牛久市、土浦市、常総市、守谷市など茨城県南エリアに対応しています。
     </p>
     <p>
-      茨城県内で住宅補修や部分リペアをご検討の際は、ご相談ください。
+      茨城県内で、住宅の部分補修、外壁補修、水回りの傷み、原状回復などをご検討の際はご相談ください。
     </p>
   </section>
 
   <section class="cta">
     <h2>ご相談について</h2>
     <p>
-      補修で済むのか、交換が必要なのか分からない場合でも、
-      まずは現地確認のうえでご案内いたします。
+      「この傷みは補修で済むのか」
+      「交換まで必要なのか」
+      「原因が別にあるのか」
+      迷う段階でもご相談いただけます。
     </p>
     <p>
-      リペア工事そのものを強くおすすめするというよりも、
-      建物の状態に合った方法を一緒に考えるためのページとしてご覧ください。
+      リペア工事を入口にしながら、必要に応じて建物全体の状態も踏まえてご案内いたします。
     </p>
     <a class="btn" href="https://kanworth.github.io/">会社ページ・お問い合わせはこちら</a>
   </section>
 
   <section class="service-links">
-    <h2>関連サービス</h2>
+    <h2>関連ページ</h2>
     <a href="https://kanworth.github.io/borate/">ホウ酸処理（シロアリ・腐朽対策）</a>
     <a href="https://kanworth.github.io/mold/">カビ対策・防カビ施工</a>
     <a href="https://kanworth.github.io/akiya/">空き家コンディション確認</a>
+    <a href="https://kanworth.github.io/renovation/">リノベーションLP</a>
   </section>
 
 </div>
 
 <footer>
-  © 株式会社カンワース｜つくば市・茨城県の住宅補修・リペア対応
+  © 株式会社カンワース｜つくば市・茨城県の住宅リペア・建物改善
 </footer>
 
 </body>
