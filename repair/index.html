@@ -2,75 +2,182 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-
 <title>外壁補修・住宅リペアなら株式会社カンワース｜つくば市・茨城県</title>
-
-<meta name="description" content="つくば市・茨城県で外壁補修・住宅リペアなら株式会社カンワース。ひび割れ・腐食・サビ・欠損など、現場確認をもとに最適な補修方法をご提案します。">
-
+<meta name="description" content="つくば市・茨城県で外壁補修・住宅リペアなら株式会社カンワース。ひび割れ、欠け、ビス穴、配線跡、サビ、腐食、水回りの劣化など、現場確認をもとに必要な施工のみをご提案します。">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
-  font-family: Arial, sans-serif;
   margin:0;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", Arial, sans-serif;
+  line-height:1.8;
+  color:#333;
   background:#f5f5f5;
-  line-height:1.7;
 }
 
 header{
-  background:#1a1a1a;
+  background:linear-gradient(135deg, #2f2f2f, #4b4b4b);
   color:#fff;
-  padding:25px;
+  padding:48px 20px 40px;
   text-align:center;
+}
+
+header h1{
+  margin:0 0 12px;
+  font-size:2rem;
+  line-height:1.4;
+}
+
+header p{
+  margin:0;
+  font-size:1rem;
+  opacity:0.95;
+}
+
+nav{
+  background:#ffffff;
+  border-bottom:1px solid #e5e5e5;
+  text-align:center;
+  padding:12px 10px;
+}
+
+nav a{
+  color:#444;
+  text-decoration:none;
+  margin:0 10px;
+  font-size:0.95rem;
+  font-weight:600;
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:24px 16px 48px;
 }
 
 section{
   background:#fff;
-  margin:20px;
-  padding:20px;
-  border-radius:10px;
+  margin:0 0 22px;
+  padding:26px 22px;
+  border-radius:14px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
 }
 
-h1,h2{
-  color:#333;
+h2{
+  margin:0 0 16px;
+  font-size:1.5rem;
+  color:#222;
+  border-left:6px solid #8c7b68;
+  padding-left:12px;
 }
 
-img{
+p{
+  margin:0 0 14px;
+}
+
+ul{
+  margin:0;
+  padding-left:20px;
+}
+
+li{
+  margin-bottom:8px;
+}
+
+.lead{
+  font-size:1.05rem;
+}
+
+.note-box{
+  background:#f7f4ef;
+  border:1px solid #e6ddd1;
+}
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.grid-2 img,
+.case-images img{
   width:100%;
-  border-radius:6px;
-  margin-top:10px;
+  height:auto;
+  display:block;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08);
 }
 
-.before-after{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
+.case-images{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:14px;
 }
 
-.before-after img{
-  width:48%;
+.case-label{
+  display:inline-block;
+  background:#8c7b68;
+  color:#fff;
+  font-size:0.85rem;
+  padding:4px 10px;
+  border-radius:999px;
+  margin-bottom:10px;
 }
 
-.box{
-  background:#f0f0f0;
-  padding:15px;
-  border-radius:6px;
+.cta{
+  text-align:center;
+  background:linear-gradient(135deg, #faf7f2, #f2eee8);
 }
 
 .btn{
   display:inline-block;
-  background:#007BFF;
+  margin-top:10px;
+  padding:14px 24px;
+  background:#7b6247;
   color:#fff;
-  padding:12px 20px;
-  border-radius:6px;
   text-decoration:none;
-  margin-top:15px;
+  border-radius:10px;
+  font-weight:700;
 }
 
-.link-box a{
+.service-links a{
   display:block;
-  margin:6px 0;
-  color:#007BFF;
+  margin:8px 0;
+  color:#7b6247;
+  text-decoration:none;
+  font-weight:600;
+}
+
+footer{
+  text-align:center;
+  color:#666;
+  font-size:0.9rem;
+  padding:20px 16px 40px;
+}
+
+@media (max-width: 768px){
+  header{
+    padding:38px 16px 32px;
+  }
+
+  header h1{
+    font-size:1.55rem;
+  }
+
+  section{
+    padding:22px 16px;
+  }
+
+  .grid-2,
+  .case-images{
+    grid-template-columns:1fr;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:4px 8px;
+  }
 }
 </style>
 </head>
@@ -78,105 +185,153 @@ img{
 <body>
 
 <header>
-<h1>外壁補修・住宅リペア</h1>
-<p>つくば市・茨城県｜株式会社カンワース</p>
+  <h1>外壁補修・住宅リペア</h1>
+  <p>つくば市・茨城県対応｜株式会社カンワース</p>
 </header>
 
-<section>
-<h2>このような症状に対応しています</h2>
-<ul>
-<li>外壁のひび割れ・欠け</li>
-<li>ビス穴・配線跡</li>
-<li>サビ・腐食</li>
-<li>水回りの劣化</li>
-<li>原状回復工事</li>
-</ul>
-</section>
+<nav>
+  <a href="https://kanworth.github.io/">会社案内</a>
+  <a href="https://kanworth.github.io/borate/">ホウ酸処理</a>
+  <a href="https://kanworth.github.io/mold/">カビ対策</a>
+  <a href="https://kanworth.github.io/akiya/">空き家コンディション確認</a>
+</nav>
 
-<section class="box">
-<h2>補修工事について</h2>
-<p>
-外壁補修・リペア工事は、状態によって<br>
-「補修で済むのか」「交換が必要なのか」など判断が変わります。
-</p>
+<div class="container">
 
-<p>
-当社では現場確認を行い、<br>
-<b>必要な施工のみをご提案</b>しています。
-</p>
+  <section>
+    <h2>住宅リペア・補修工事について</h2>
+    <p class="lead">
+      株式会社カンワースでは、外壁の欠け・ひび割れ・ビス穴・配線跡・サビ・腐食・水回りの劣化など、
+      住宅のさまざまな補修に対応しています。
+    </p>
+    <p>
+      リペア工事は、状態によって
+      「補修で済むのか」「部材交換が必要なのか」「再施工が適しているのか」
+      の判断が変わります。
+    </p>
+    <p>
+      当社では現場確認を行い、<strong>必要な施工のみをご提案</strong>しています。
+      見た目だけでなく、その後の劣化の進み方も考えながら施工します。
+    </p>
+  </section>
 
-<p>
-見た目だけでなく、今後の劣化も考えた施工を行います。
-</p>
-</section>
+  <section class="note-box">
+    <h2>このような症状に対応しています</h2>
+    <ul>
+      <li>外壁のひび割れ・欠け</li>
+      <li>ビス穴・配線跡・設備撤去跡</li>
+      <li>サビ・腐食・傷み</li>
+      <li>水回りの劣化・腐食</li>
+      <li>小規模な原状回復工事</li>
+      <li>部分補修で直せるかどうかの判断</li>
+    </ul>
+    <p>
+      小さな補修から対応していますので、
+      「こんなこと頼んでいいのかな？」という内容でもご相談ください。
+    </p>
+    <p>
+      補修で対応できる場合は、無理に交換工事をおすすめしません。
+    </p>
+  </section>
 
-<section>
-<h2>施工事例① 外壁補修</h2>
-<p>配線跡や劣化部分の補修</p>
+  <section>
+    <h2>実際の作業風景</h2>
+    <p>
+      現場の状況に合わせて、一つ一つ手作業で補修を行っています。
+      現場ごとに状態が異なるため、状況を確認しながら最適な方法で施工しています。
+    </p>
 
-<div class="before-after">
-<img src="①施工前.JPG" alt="施工前 外壁補修">
-<img src="①施工後.jpg" alt="施工後 外壁補修">
+    <div class="grid-2">
+      <img src="作業中リペア.JPG" alt="住宅リペアの作業風景">
+      <img src="実際の作業中リペア.jpg" alt="外壁補修の実際の作業風景">
+    </div>
+  </section>
+
+  <section>
+    <h2>施工事例① 外壁補修</h2>
+    <span class="case-label">施工前・施工後</span>
+    <p>
+      設備撤去後の跡や劣化部分を補修し、できるだけ自然に見えるよう仕上げた事例です。
+    </p>
+
+    <div class="case-images">
+      <img src="①施工前.JPG" alt="外壁補修 施工前">
+      <img src="①施工後.jpg" alt="外壁補修 施工後">
+    </div>
+  </section>
+
+  <section>
+    <h2>施工事例② 外壁の跡補修</h2>
+    <span class="case-label">施工前・施工後</span>
+    <p>
+      外壁に残ってしまった跡や不自然な部分を補修し、周囲となじむように整えた事例です。
+    </p>
+
+    <div class="case-images">
+      <img src="②施工前.PNG" alt="外壁の跡補修 施工前">
+      <img src="②施工後.PNG" alt="外壁の跡補修 施工後">
+    </div>
+  </section>
+
+  <section>
+    <h2>施工事例③ 水回りの腐食補修</h2>
+    <span class="case-label">施工前・施工後</span>
+    <p>
+      水漏れや湿気などが原因で傷んだ箇所を補修した事例です。
+      見た目だけでなく、今後の状態も考えて対応します。
+    </p>
+
+    <div class="case-images">
+      <img src="③施工前.PNG" alt="水回りの腐食補修 施工前">
+      <img src="③施工後.PNG" alt="水回りの腐食補修 施工後">
+    </div>
+  </section>
+
+  <section>
+    <h2>カンワースの特徴</h2>
+    <ul>
+      <li>現場経験をもとに、補修・交換・再施工の判断を行います。</li>
+      <li>リペアだけでなく、リノベーション、カビ対策、床下環境確認などにも連動できます。</li>
+      <li>必要以上の工事をすすめず、現場に合った内容をご案内します。</li>
+      <li>見た目の改善だけでなく、その後の劣化や使い方も考慮して対応します。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>対応エリア</h2>
+    <p>
+      つくば市を中心に、牛久市、土浦市、常総市、守谷市など茨城県南エリアに対応しています。
+    </p>
+    <p>
+      茨城県内で住宅補修や部分リペアをご検討の際は、ご相談ください。
+    </p>
+  </section>
+
+  <section class="cta">
+    <h2>ご相談について</h2>
+    <p>
+      補修で済むのか、交換が必要なのか分からない場合でも、
+      まずは現地確認のうえでご案内いたします。
+    </p>
+    <p>
+      リペア工事そのものを強くおすすめするというよりも、
+      建物の状態に合った方法を一緒に考えるためのページとしてご覧ください。
+    </p>
+    <a class="btn" href="https://kanworth.github.io/">会社ページ・お問い合わせはこちら</a>
+  </section>
+
+  <section class="service-links">
+    <h2>関連サービス</h2>
+    <a href="https://kanworth.github.io/borate/">ホウ酸処理（シロアリ・腐朽対策）</a>
+    <a href="https://kanworth.github.io/mold/">カビ対策・防カビ施工</a>
+    <a href="https://kanworth.github.io/akiya/">空き家コンディション確認</a>
+  </section>
+
 </div>
-</section>
 
-<section>
-<h2>施工事例② 外壁の跡補修</h2>
-<p>残ってしまった跡の補修</p>
-
-<div class="before-after">
-<img src="②施工前.PNG" alt="施工前 外壁補修">
-<img src="②施工後.PNG" alt="施工後 外壁補修">
-</div>
-</section>
-
-<section>
-<h2>施工事例③ 水回りの腐食補修</h2>
-<p>水漏れによる腐食の補修</p>
-
-<div class="before-after">
-<img src="③施工前.PNG" alt="施工前 水回り補修">
-<img src="③施工後.PNG" alt="施工後 水回り補修">
-</div>
-</section>
-
-<section>
-<h2>カンワースの特徴</h2>
-<ul>
-<li>現場経験をもとにした判断</li>
-<li>リノベーション・防カビ・床下施工と連動可能</li>
-<li>必要以上の工事は提案しません</li>
-</ul>
-</section>
-
-<section>
-<h2>対応エリア</h2>
-<p>
-つくば市・牛久市・土浦市・常総市・守谷市 ほか<br>
-茨城県南エリア
-</p>
-</section>
-
-<section>
-<h2>ご相談について</h2>
-<p>
-補修で済むかどうかの判断も含め、<br>
-まずは現地確認にてご案内いたします。
-</p>
-
-<a href="https://kanworth.github.io/" class="btn">
-会社ページ・お問い合わせはこちら
-</a>
-</section>
-
-<section class="link-box">
-<h2>関連サービス</h2>
-
-<a href="https://kanworth.github.io/borate/">ホウ酸処理（シロアリ・腐朽対策）</a>
-<a href="https://kanworth.github.io/mold/">カビ対策・防カビ施工</a>
-<a href="https://kanworth.github.io/akiya/">空き家コンディション確認</a>
-
-</section>
+<footer>
+  © 株式会社カンワース｜つくば市・茨城県の住宅補修・リペア対応
+</footer>
 
 </body>
 </html>
