@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>つくば・牛久のリノベーションなら株式会社カンワース | 見た目だけで終わらせない改修</title>
+  <meta name="description" content="つくば・牛久エリアのリノベーションなら株式会社カンワース。内装の改修だけでなく、床下・湿気・カビ・劣化状態まで確認し、住み続けやすい住まいへ整えます。施工前後写真も掲載。">
+  <meta name="keywords" content="リノベーション,つくば,牛久,リフォーム,内装,カビ,床下,ホウ酸,原状回復,株式会社カンワース">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="canonical" href="https://kanworth.github.io/renovation/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="つくば・牛久のリノベーションなら株式会社カンワース">
+  <meta property="og:description" content="見た目だけで終わらせない。内装・床下・湿気・カビまで見据えたリノベーション。">
+  <meta property="og:url" content="https://kanworth.github.io/renovation/">
+  <meta property="og:site_name" content="株式会社カンワース">
+  <meta name="theme-color" content="#1f4b57">
+  <style>
+    :root{
+      --bg:#f7f6f2;
+      --bg2:#ffffff;
+      --ink:#1d2b32;
+      --muted:#5d6c73;
+      --line:#d9e1e4;
+      --brand:#1f4b57;
+      --brand2:#3f6f78;
+      --accent:#b88746;
+      --soft:#eaf1f2;
+      --shadow:0 18px 44px rgba(17,33,39,.10);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(184,135,70,.07), transparent 25%),
+        linear-gradient(180deg, #fbfaf7 0%, #f3f1ec 100%);
+      line-height:1.8;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(calc(100% - 32px), var(--max)); margin:0 auto}
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background:rgba(255,255,255,.78);
+      border-bottom:1px solid rgba(31,75,87,.08);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:18px; padding:14px 0;
+    }
+    .brand{
+      font-weight:800; letter-spacing:.03em; color:var(--brand);
+      font-size:15px;
+    }
+    .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+    .nav a{font-size:13px; color:var(--muted)}
+    .nav .cta-mini{
+      background:var(--brand); color:#fff; padding:10px 14px; border-radius:999px; font-weight:700;
+      box-shadow:0 8px 20px rgba(31,75,87,.18);
+    }
+    .hero{
+      padding:72px 0 42px;
+    }
+    .hero-wrap{
+      display:grid; grid-template-columns:1.05fr .95fr; gap:34px; align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      background:#edf4f5; color:var(--brand); border:1px solid #d8e6e8;
+      border-radius:999px; padding:10px 16px; font-weight:700; font-size:13px;
+      margin-bottom:18px;
+    }
+    h1{
+      margin:0 0 18px; font-size:clamp(30px, 5vw, 58px); line-height:1.15; letter-spacing:.02em;
+    }
+    .lead{
+      font-size:17px; color:var(--muted); margin:0 0 28px;
+    }
+    .hero-points{
+      display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px;
+      margin:0 0 26px; padding:0; list-style:none;
+    }
+    .hero-points li{
+      background:rgba(255,255,255,.84); border:1px solid var(--line); border-radius:16px;
+      padding:14px 14px 14px 16px; box-shadow: var(--shadow); font-weight:700; font-size:14px;
+    }
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:15px 22px; border-radius:999px; font-weight:800; letter-spacing:.02em;
+      transition:.2s ease; border:1px solid transparent;
+    }
+    .btn-primary{background:var(--brand); color:#fff; box-shadow:0 12px 28px rgba(31,75,87,.18)}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-secondary{background:#fff; border-color:var(--line); color:var(--brand)}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.84));
+      border:1px solid rgba(31,75,87,.08);
+      border-radius:28px; overflow:hidden; box-shadow:var(--shadow);
+    }
+    .hero-card img{aspect-ratio:4/3; object-fit:cover}
+    .hero-note{
+      padding:18px 20px 22px;
+    }
+    .hero-note strong{display:block; font-size:18px; margin-bottom:6px}
+    .hero-note p{margin:0; color:var(--muted); font-size:14px}
+    section{padding:34px 0}
+    .section-head{max-width:780px; margin:0 0 22px}
+    .section-kicker{
+      color:var(--accent); font-weight:800; letter-spacing:.08em; font-size:12px; text-transform:uppercase;
+      margin-bottom:10px;
+    }
+    h2{
+      margin:0 0 12px; font-size:clamp(26px, 3.6vw, 42px); line-height:1.2;
+    }
+    .section-desc{margin:0; color:var(--muted)}
+    .pain-grid, .strength-grid, .flow-grid, .faq-grid{
+      display:grid; gap:18px;
+    }
+    .pain-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
+    .strength-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
+    .flow-grid{grid-template-columns:repeat(5, minmax(0,1fr))}
+    .faq-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+    .card{
+      background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:22px;
+      padding:24px; box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 10px; font-size:20px}
+    .card p{margin:0; color:var(--muted)}
+    .num{
+      width:44px; height:44px; display:grid; place-items:center; border-radius:50%;
+      background:var(--soft); color:var(--brand); font-weight:900; margin-bottom:14px;
+      border:1px solid #d7e5e7;
+    }
+    .band{
+      background:linear-gradient(180deg, rgba(31,75,87,.98), rgba(31,75,87,.92));
+      color:#fff; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08);
+      margin:26px 0;
+    }
+    .band .container{padding:28px 0}
+    .band-grid{
+      display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:18px;
+    }
+    .band-item{
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.10);
+      border-radius:18px; padding:18px;
+    }
+    .band-item strong{display:block; font-size:15px; margin-bottom:6px}
+    .band-item span{display:block; color:rgba(255,255,255,.78); font-size:14px; line-height:1.7}
+    .gallery{
+      display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:22px;
+    }
+    .gallery-item{
+      background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; box-shadow:var(--shadow);
+    }
+    .gallery-item img{
+      width:100%; aspect-ratio:16/9; object-fit:cover; background:#eef2f3;
+    }
+    .gallery-text{padding:18px 20px 22px}
+    .gallery-text h3{margin:0 0 8px; font-size:20px}
+    .gallery-text p{margin:0; color:var(--muted)}
+    .split{
+      display:grid; grid-template-columns:1fr 1fr; gap:24px;
+    }
+    .list{
+      margin:0; padding-left:1.2em; color:var(--muted);
+    }
+    .list li + li{margin-top:8px}
+    .cta{
+      padding:42px 0 80px;
+    }
+    .cta-box{
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.98), rgba(245,249,250,.94)),
+        linear-gradient(135deg, rgba(31,75,87,.08), transparent);
+      border:1px solid var(--line); border-radius:28px; padding:34px; box-shadow:var(--shadow);
+      display:grid; grid-template-columns:1.05fr .95fr; gap:24px; align-items:center;
+    }
+    .contact-card{
+      background:#fff; border:1px solid var(--line); border-radius:22px; padding:24px;
+    }
+    .contact-card p{margin:.2em 0; color:var(--muted)}
+    .contact-card strong{color:var(--brand)}
+    footer{
+      padding:28px 0 38px; color:#6e7d83; font-size:13px;
+      border-top:1px solid rgba(31,75,87,.08);
+    }
+    .small{font-size:13px; color:#7a898f}
+    @media (max-width: 980px){
+      .hero-wrap, .cta-box, .split{grid-template-columns:1fr}
+      .pain-grid, .strength-grid, .gallery, .band-grid, .faq-grid{grid-template-columns:1fr}
+      .flow-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .nav a:not(.cta-mini){display:none}
+      .hero{padding-top:46px}
+    }
+    @media (max-width: 640px){
+      .flow-grid{grid-template-columns:1fr}
+      .hero-points{grid-template-columns:1fr}
+      .container{width:min(calc(100% - 22px), var(--max))}
+      .card, .cta-box, .contact-card, .gallery-text{padding:18px}
+      .topbar-inner{padding:12px 0}
+      h1{font-size:34px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"株式会社カンワース",
+    "url":"https://kanworth.github.io/renovation/",
+    "image":"https://kanworth.github.io/renovation/assets/living.png",
+    "description":"内装だけでなく、床下・湿気・カビ・劣化状態まで見据えたリノベーションの案内ページです。",
+    "areaServed":["つくば市","牛久市","茨城県南エリア"],
+    "serviceType":["リノベーション","リフォーム","原状回復","床下確認","カビ対策"]
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">株式会社カンワース｜リノベーション</a>
+      <nav class="nav">
+        <a href="#strength">選ばれる理由</a>
+        <a href="#works">施工前後</a>
+        <a href="#flow">ご相談の流れ</a>
+        <a href="#faq">よくある質問</a>
+        <a class="cta-mini" href="#contact">無料相談はこちら</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <div class="eyebrow">見た目だけで終わらせないリノベーション</div>
+          <h1>住めるようにするだけではなく、<br>この先まで考えて整える。</h1>
+          <p class="lead">
+            株式会社カンワースのリノベーションは、内装の見た目をきれいにするだけではありません。
+            居室・水回り・細部の改修に加え、床下や湿気、カビの原因になりやすい部分まで確認し、
+            これから先も使いやすい住まいへ整えていきます。
+          </p>
+          <ul class="hero-points">
+            <li>水回り・居室・建具まで一体で対応</li>
+            <li>床下・湿気・劣化状態も確認</li>
+            <li>原状回復から本格改修まで相談可能</li>
+            <li>写真で変化がわかる施工提案</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">まずは無料相談</a>
+            <a class="btn btn-secondary" href="#works">施工前後を見る</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="assets/living.png" alt="リビングの施工前後。暗かった空間が明るく整ったリノベーション事例">
+          <div class="hero-note">
+            <strong>施工前後で伝わる、空間の変化</strong>
+            <p>暗さ・古さ・使いにくさを残したままにせず、暮らしやすい状態へ整える施工を目指します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Trouble</div>
+          <h2>こんなお悩みに向いています</h2>
+          <p class="section-desc">
+            中古住宅の再生、賃貸退去後の立て直し、空き家の活用前整備など、
+            「どこから直すべきかわからない」という段階からご相談いただけます。
+          </p>
+        </div>
+        <div class="pain-grid">
+          <article class="card">
+            <h3>古い家をそのまま使うのが不安</h3>
+            <p>見える部分だけでなく、湿気や床下の状態も含めて確認したい方に向いています。</p>
+          </article>
+          <article class="card">
+            <h3>内装を一新したい</h3>
+            <p>和室・リビング・水回り・建具など、生活導線を含めてまとめて整えたいケースに対応します。</p>
+          </article>
+          <article class="card">
+            <h3>原状回復より一歩踏み込んで直したい</h3>
+            <p>ただ戻すだけではなく、次の入居や活用を見据えた整備をご希望の方にも適しています。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="band">
+      <div class="container">
+        <div class="band-grid">
+          <div class="band-item">
+            <strong>居室の印象改善</strong>
+            <span>和室・寝室・リビングなど、部屋全体の空気感を変える改修。</span>
+          </div>
+          <div class="band-item">
+            <strong>水回りの更新</strong>
+            <span>トイレ・洗面・キッチン・浴室など、日常で差が出る部分を整備。</span>
+          </div>
+          <div class="band-item">
+            <strong>細部まで手を入れる</strong>
+            <span>建具・廊下・階段・壁造作など、仕上がりの印象を左右する部分まで対応。</span>
+          </div>
+          <div class="band-item">
+            <strong>見えない部分も確認</strong>
+            <span>床下や湿気の状態も踏まえ、見た目だけで終わらせない方向でご提案。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="strength">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Strength</div>
+          <h2>カンワースのリノベーションが選ばれる理由</h2>
+          <p class="section-desc">
+            「おしゃれにする」だけではなく、「この先も使いやすいか」を重視して計画します。
+          </p>
+        </div>
+        <div class="strength-grid">
+          <article class="card">
+            <div class="num">01</div>
+            <h3>部屋単体ではなく、家全体で考える</h3>
+            <p>一部屋だけきれいでも、生活導線やほかの場所との落差が大きいと満足度は下がります。全体バランスを見ながら整えます。</p>
+          </article>
+          <article class="card">
+            <div class="num">02</div>
+            <h3>見た目と実用性の両方を重視</h3>
+            <p>古い家特有の暗さ、使いにくさ、手入れのしづらさを減らし、日常で使いやすい状態を目指します。</p>
+          </article>
+          <article class="card">
+            <div class="num">03</div>
+            <h3>床下・湿気・カビの視点を持てる</h3>
+            <p>内装工事だけでなく、湿気や床下環境が関係するケースも踏まえてご相談いただけます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Works</div>
+          <h2>施工前後がわかる実例</h2>
+          <p class="section-desc">
+            牛久市南の現場写真をもとに、空間の変化が伝わりやすい箇所を掲載しています。
+          </p>
+        </div>
+
+        <div class="gallery">
+          <article class="gallery-item">
+            <img src="assets/kitchen.png" alt="キッチンの施工前後。古い流し台の空間が明るく整った事例">
+            <div class="gallery-text">
+              <h3>キッチン</h3>
+              <p>古さが目立つ状態から、明るくすっきりした印象へ。日常で最も使用頻度の高い場所の変化は、住みやすさに直結します。</p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="assets/washitsu.png" alt="和室の施工前後。畳の部屋が明るく整った事例">
+            <div class="gallery-text">
+              <h3>和室</h3>
+              <p>既存の雰囲気を活かしながら、清潔感と整った印象を出すことで、来客時にも見せやすい空間に変わります。</p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="assets/washstand.png" alt="洗面台の施工前後。古い洗面スペースが使いやすくなった事例">
+            <div class="gallery-text">
+              <h3>洗面スペース</h3>
+              <p>狭く古さを感じやすい洗面まわりも、設備更新と内装の整理で、毎日使いやすい空間へ整います。</p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="assets/living.png" alt="リビングの施工前後。暗かった居室が明るくなった事例">
+            <div class="gallery-text">
+              <h3>リビング</h3>
+              <p>部屋全体の印象が大きく変わる代表例です。暗さや古い印象を抑え、家の中心として使いやすい空間に整えます。</p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="assets/wallwork.png" alt="壁造作の施工前後。内装壁面を整えたリノベーション事例">
+            <div class="gallery-text">
+              <h3>壁造作・内装調整</h3>
+              <p>部屋の印象を左右する壁面や造作の整備にも対応。仕上がりの完成度を高める細かな施工も大切にしています。</p>
+            </div>
+          </article>
+
+          <article class="gallery-item">
+            <img src="assets/crawlspace.png" alt="床下の確認写真。見えない部分まで確認する施工方針のイメージ">
+            <div class="gallery-text">
+              <h3>見えない部分の確認</h3>
+              <p>床下の状態は、湿気・劣化・カビの再発リスクを考えるうえで見逃せません。見える場所だけで終わらせない考え方も強みです。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="card">
+          <div class="section-kicker">Service</div>
+          <h2 style="font-size:30px">ご相談いただける内容</h2>
+          <ul class="list">
+            <li>中古住宅のリノベーション</li>
+            <li>賃貸物件の原状回復・再生</li>
+            <li>水回りの更新や内装改修</li>
+            <li>和室・洋室・リビングの印象改善</li>
+            <li>建具・廊下・階段・細部の整備</li>
+            <li>床下や湿気が気になる住まいの相談</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="section-kicker">Policy</div>
+          <h2 style="font-size:30px">こんな考え方で進めます</h2>
+          <ul class="list">
+            <li>必要なところを見極めて、無理のない計画で進める</li>
+            <li>仕上がりだけでなく、その後の使いやすさも重視する</li>
+            <li>写真や現地状況をもとに、わかりやすく整理して提案する</li>
+            <li>表面だけきれいにして終わらせず、原因になりやすい部分も確認する</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Flow</div>
+          <h2>ご相談から施工までの流れ</h2>
+          <p class="section-desc">初めての方でも進めやすいよう、現地確認からご提案まで整理して対応します。</p>
+        </div>
+        <div class="flow-grid">
+          <article class="card">
+            <div class="num">1</div>
+            <h3>ご相談</h3>
+            <p>お困りごと、物件状況、ご希望の方向性を伺います。</p>
+          </article>
+          <article class="card">
+            <div class="num">2</div>
+            <h3>現地確認</h3>
+            <p>内装・水回り・導線・必要に応じて床下などを確認します。</p>
+          </article>
+          <article class="card">
+            <div class="num">3</div>
+            <h3>ご提案</h3>
+            <p>状態に応じて、工事内容や進め方を整理してご案内します。</p>
+          </article>
+          <article class="card">
+            <div class="num">4</div>
+            <h3>施工</h3>
+            <p>工程を踏みながら、見た目と使いやすさの両面を整えます。</p>
+          </article>
+          <article class="card">
+            <div class="num">5</div>
+            <h3>完了確認</h3>
+            <p>仕上がりを確認し、次に使いやすい状態まで整えます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">FAQ</div>
+          <h2>よくあるご質問</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="card">
+            <h3>まだ工事内容が固まっていなくても相談できますか？</h3>
+            <p>可能です。まずは現状のお悩みや使い方を伺い、必要な方向性を整理していきます。</p>
+          </article>
+          <article class="card">
+            <h3>部分的な改修でも大丈夫ですか？</h3>
+            <p>はい。水回り、居室、細部の整備など、規模に応じてご相談いただけます。</p>
+          </article>
+          <article class="card">
+            <h3>床下や湿気のことも一緒に見てもらえますか？</h3>
+            <p>必要に応じて確認し、見える部分だけでは判断しにくい不安も含めてご相談いただけます。</p>
+          </article>
+          <article class="card">
+            <h3>空き家や退去後物件でも相談できますか？</h3>
+            <p>可能です。再活用や次の入居を見据えた整備としてご相談ください。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <div class="section-kicker">Contact</div>
+            <h2>リノベーションのご相談はこちら</h2>
+            <p class="section-desc">
+              中古住宅、空き家、退去後物件、内装の立て直しなど、
+              「どこから直せばいいかわからない」という段階からでも大丈夫です。
+              まずは現状とご希望をお聞かせください。
+            </p>
+            <div class="hero-actions" style="margin-top:22px">
+              <a class="btn btn-primary" href="tel:08000000000">お電話で相談</a>
+              <a class="btn btn-secondary" href="mailto:info@example.com">メールで相談</a>
+            </div>
+            <p class="small" style="margin-top:14px">※ 電話番号・メールアドレスは公開用の正式情報に差し替えてください。</p>
+          </div>
+          <aside class="contact-card">
+            <strong>株式会社カンワース</strong>
+            <p>リノベーション / 原状回復 / 内装改修 / 床下確認 / カビ・湿気の相談</p>
+            <p>対応エリア：つくば市・牛久市・近隣エリア</p>
+            <p>現地状況に応じてご提案内容は異なります。</p>
+            <p>施工写真や状態確認をもとに、わかりやすく整理してご案内します。</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 株式会社カンワース Renovation Landing Page</div>
+      <div class="small">GitHub Pagesにアップする際は、このフォルダごと配置し、URLに合わせて canonical と連絡先を最終調整してください。</div>
+    </div>
+  </footer>
+</body>
+</html>
