@@ -4,33 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>つくば・牛久のリノベーションなら株式会社カンワース | 見た目だけで終わらせない改修</title>
-  <meta name="description" content="つくば・牛久エリアのリノベーションなら株式会社カンワース。内装の改修だけでなく、床下・湿気・カビ・劣化状態まで確認し、住み続けやすい住まいへ整えます。施工前後写真も掲載。">
-  <meta name="keywords" content="リノベーション,つくば,牛久,リフォーム,内装,カビ,床下,ホウ酸,原状回復,株式会社カンワース">
+  <meta name="description" content="つくば・牛久エリアのリノベーションなら株式会社カンワース。内装の改修だけでなく、住まい全体の使いやすさや再生力を考え、住み続けやすい空間へ整えます。施工前後写真も掲載。">
+  <meta name="keywords" content="リノベーション,つくば,牛久,リフォーム,原状回復,空き家,中古住宅,内装改修,株式会社カンワース">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://kanworth.github.io/renovation/">
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="つくば・牛久のリノベーションなら株式会社カンワース">
-  <meta property="og:description" content="見た目だけで終わらせない。内装・床下・湿気・カビまで見据えたリノベーション。">
+  <meta property="og:description" content="見た目だけで終わらせない。古い住宅を、次に使いやすい状態へ整えるリノベーション。">
   <meta property="og:url" content="https://kanworth.github.io/renovation/">
   <meta property="og:site_name" content="株式会社カンワース">
-  <meta property="og:image" content="https://kanworth.github.io/renovation/images/living.png">
-  <meta name="theme-color" content="#1f4b57">
+  <meta property="og:image" content="https://kanworth.github.io/renovation/images/living_after.jpg">
+  <meta name="theme-color" content="#264653">
 
   <style>
     :root{
-      --bg:#f7f6f2;
-      --bg2:#ffffff;
-      --ink:#1d2b32;
-      --muted:#5d6c73;
-      --line:#d9e1e4;
-      --brand:#1f4b57;
-      --brand2:#3f6f78;
-      --accent:#b88746;
-      --soft:#eaf1f2;
-      --shadow:0 18px 44px rgba(17,33,39,.10);
-      --radius:22px;
+      --bg:#f5f2eb;
+      --bg-soft:#faf8f3;
+      --white:#ffffff;
+      --ink:#223238;
+      --muted:#66767d;
+      --line:#d8dfdf;
+      --line-strong:#c8d0d0;
+      --brand:#264653;
+      --brand-deep:#1d3741;
+      --brand-soft:#edf4f4;
+      --accent:#b5894b;
+      --accent-soft:#f6eee1;
+      --shadow:0 16px 40px rgba(27,42,48,.10);
+      --shadow-soft:0 10px 24px rgba(27,42,48,.06);
+      --radius:24px;
+      --radius-sm:16px;
       --max:1180px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -38,175 +45,505 @@
       font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;
       color:var(--ink);
       background:
-        radial-gradient(circle at top right, rgba(184,135,70,.07), transparent 25%),
-        linear-gradient(180deg, #fbfaf7 0%, #f3f1ec 100%);
+        radial-gradient(circle at top right, rgba(181,137,75,.08), transparent 22%),
+        linear-gradient(180deg, #fbfaf7 0%, #f2efe8 100%);
       line-height:1.8;
     }
+
     img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
     .container{width:min(calc(100% - 32px), var(--max)); margin:0 auto}
+
     .topbar{
-      position:sticky; top:0; z-index:20;
-      backdrop-filter: blur(10px);
-      background:rgba(255,255,255,.78);
-      border-bottom:1px solid rgba(31,75,87,.08);
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(255,255,255,.84);
+      border-bottom:1px solid rgba(38,70,83,.10);
+      box-shadow:0 2px 14px rgba(20,30,35,.04);
     }
     .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:18px; padding:14px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
     }
     .brand{
-      font-weight:800; letter-spacing:.03em; color:var(--brand);
+      font-weight:900;
+      letter-spacing:.03em;
+      color:var(--brand);
       font-size:15px;
+      white-space:nowrap;
     }
-    .nav{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
-    .nav a{font-size:13px; color:var(--muted)}
+    .nav{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .nav a{
+      font-size:13px;
+      color:var(--muted);
+      font-weight:700;
+    }
     .nav .cta-mini{
-      background:var(--brand); color:#fff; padding:10px 14px; border-radius:999px; font-weight:700;
-      box-shadow:0 8px 20px rgba(31,75,87,.18);
+      background:linear-gradient(180deg, var(--brand), var(--brand-deep));
+      color:#fff;
+      padding:10px 15px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 10px 20px rgba(38,70,83,.18);
     }
+
     .hero{
-      padding:72px 0 42px;
+      padding:78px 0 46px;
     }
     .hero-wrap{
-      display:grid; grid-template-columns:1.05fr .95fr; gap:34px; align-items:center;
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:34px;
+      align-items:center;
     }
     .eyebrow{
-      display:inline-flex; align-items:center; gap:10px;
-      background:#edf4f5; color:var(--brand); border:1px solid #d8e6e8;
-      border-radius:999px; padding:10px 16px; font-weight:700; font-size:13px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:var(--brand-soft);
+      color:var(--brand);
+      border:1px solid #dbe8e8;
+      border-radius:999px;
+      padding:10px 16px;
+      font-weight:800;
+      font-size:13px;
       margin-bottom:18px;
+      box-shadow:var(--shadow-soft);
     }
     h1{
-      margin:0 0 18px; font-size:clamp(30px, 5vw, 58px); line-height:1.15; letter-spacing:.02em;
+      margin:0 0 18px;
+      font-size:clamp(32px, 5vw, 60px);
+      line-height:1.14;
+      letter-spacing:.02em;
     }
     .lead{
-      font-size:17px; color:var(--muted); margin:0 0 28px;
+      font-size:17px;
+      color:var(--muted);
+      margin:0 0 28px;
     }
+
     .hero-points{
-      display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px;
-      margin:0 0 26px; padding:0; list-style:none;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      list-style:none;
+      padding:0;
+      margin:0 0 28px;
     }
     .hero-points li{
-      background:rgba(255,255,255,.84); border:1px solid var(--line); border-radius:16px;
-      padding:14px 14px 14px 16px; box-shadow: var(--shadow); font-weight:700; font-size:14px;
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 16px;
+      font-weight:800;
+      font-size:14px;
+      box-shadow:var(--shadow-soft);
     }
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:15px 22px; border-radius:999px; font-weight:800; letter-spacing:.02em;
-      transition:.2s ease; border:1px solid transparent;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:15px 22px;
+      border-radius:999px;
+      font-weight:900;
+      letter-spacing:.02em;
+      transition:.2s ease;
+      border:1px solid transparent;
     }
-    .btn-primary{background:var(--brand); color:#fff; box-shadow:0 12px 28px rgba(31,75,87,.18)}
+    .btn-primary{
+      background:linear-gradient(180deg, var(--brand), var(--brand-deep));
+      color:#fff;
+      box-shadow:0 14px 28px rgba(38,70,83,.20);
+    }
     .btn-primary:hover{transform:translateY(-1px)}
-    .btn-secondary{background:#fff; border-color:var(--line); color:var(--brand)}
+    .btn-secondary{
+      background:#fff;
+      color:var(--brand);
+      border-color:var(--line);
+      box-shadow:var(--shadow-soft);
+    }
+
     .hero-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.84));
-      border:1px solid rgba(31,75,87,.08);
-      border-radius:28px; overflow:hidden; box-shadow:var(--shadow);
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.88));
+      border:1px solid rgba(38,70,83,.08);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      position:relative;
     }
-    .hero-card img{aspect-ratio:4/3; object-fit:cover}
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      border:1px solid rgba(255,255,255,.45);
+      border-radius:28px;
+    }
+    .hero-card img{
+      width:100%;
+      aspect-ratio:4/3;
+      object-fit:cover;
+    }
     .hero-note{
-      padding:18px 20px 22px;
+      padding:20px 22px 24px;
+      background:linear-gradient(180deg, rgba(255,255,255,.72), rgba(247,250,250,.92));
     }
-    .hero-note strong{display:block; font-size:18px; margin-bottom:6px}
-    .hero-note p{margin:0; color:var(--muted); font-size:14px}
-    section{padding:34px 0}
-    .section-head{max-width:780px; margin:0 0 22px}
+    .hero-note strong{
+      display:block;
+      font-size:18px;
+      margin-bottom:6px;
+      color:var(--brand);
+    }
+    .hero-note p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    section{padding:38px 0}
+    .section-head{
+      max-width:790px;
+      margin:0 0 24px;
+    }
     .section-kicker{
-      color:var(--accent); font-weight:800; letter-spacing:.08em; font-size:12px; text-transform:uppercase;
+      display:inline-block;
+      color:var(--accent);
+      font-weight:900;
+      letter-spacing:.10em;
+      font-size:12px;
+      text-transform:uppercase;
       margin-bottom:10px;
+      position:relative;
+      padding-left:16px;
+    }
+    .section-kicker::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent);
+      position:absolute;
+      left:0;
+      top:8px;
     }
     h2{
-      margin:0 0 12px; font-size:clamp(26px, 3.6vw, 42px); line-height:1.2;
+      margin:0 0 12px;
+      font-size:clamp(28px, 3.6vw, 42px);
+      line-height:1.2;
     }
-    .section-desc{margin:0; color:var(--muted)}
-    .pain-grid, .strength-grid, .flow-grid, .faq-grid{
-      display:grid; gap:18px;
+    .section-desc{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .pain-grid,
+    .strength-grid,
+    .flow-grid,
+    .faq-grid{
+      display:grid;
+      gap:18px;
     }
     .pain-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
     .strength-grid{grid-template-columns:repeat(3, minmax(0,1fr))}
     .flow-grid{grid-template-columns:repeat(5, minmax(0,1fr))}
     .faq-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+
     .card{
-      background:rgba(255,255,255,.9); border:1px solid var(--line); border-radius:22px;
-      padding:24px; box-shadow:var(--shadow);
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.9));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+      position:relative;
+      overflow:hidden;
     }
-    .card h3{margin:0 0 10px; font-size:20px}
-    .card p{margin:0; color:var(--muted)}
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      background:linear-gradient(90deg, var(--accent), transparent);
+      opacity:.85;
+    }
+    .card h3{
+      margin:0 0 10px;
+      font-size:20px;
+      color:#23363d;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+    }
+
     .num{
-      width:44px; height:44px; display:grid; place-items:center; border-radius:50%;
-      background:var(--soft); color:var(--brand); font-weight:900; margin-bottom:14px;
+      width:46px;
+      height:46px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:linear-gradient(180deg, #f4faf9, #e9f2f2);
+      color:var(--brand);
+      font-weight:900;
+      margin-bottom:14px;
       border:1px solid #d7e5e7;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
     }
+
     .band{
-      background:linear-gradient(180deg, rgba(31,75,87,.98), rgba(31,75,87,.92));
-      color:#fff; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08);
-      margin:26px 0;
+      background:linear-gradient(180deg, rgba(38,70,83,.98), rgba(29,55,65,.96));
+      color:#fff;
+      margin:30px 0;
+      position:relative;
+      overflow:hidden;
     }
-    .band .container{padding:28px 0}
+    .band::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at right top, rgba(181,137,75,.18), transparent 24%);
+      pointer-events:none;
+    }
+    .band .container{padding:30px 0}
     .band-grid{
-      display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:18px;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:18px;
+      position:relative;
+      z-index:1;
     }
     .band-item{
-      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.10);
-      border-radius:18px; padding:18px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
     }
-    .band-item strong{display:block; font-size:15px; margin-bottom:6px}
-    .band-item span{display:block; color:rgba(255,255,255,.78); font-size:14px; line-height:1.7}
-    .gallery{
-      display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:22px;
+    .band-item strong{
+      display:block;
+      font-size:15px;
+      margin-bottom:6px;
     }
-    .gallery-item{
-      background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; box-shadow:var(--shadow);
+    .band-item span{
+      display:block;
+      color:rgba(255,255,255,.82);
+      font-size:14px;
+      line-height:1.7;
     }
-    .gallery-item img{
-      width:100%; aspect-ratio:16/9; object-fit:cover; background:#eef2f3;
+
+    .works{
+      display:flex;
+      flex-direction:column;
+      gap:36px;
     }
-    .gallery-text{padding:18px 20px 22px}
-    .gallery-text h3{margin:0 0 8px; font-size:20px}
-    .gallery-text p{margin:0; color:var(--muted)}
+    .work-item{
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(252,252,251,.94));
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .work-item::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:6px;
+      background:linear-gradient(90deg, var(--brand), var(--accent));
+    }
+    .work-title-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:10px;
+    }
+    .work-item h3{
+      margin:0;
+      font-size:23px;
+      color:var(--brand);
+    }
+    .work-badge{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#8c6330;
+      border:1px solid #ecd7ba;
+      font-weight:800;
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .work-item .caption{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .ba{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    .ba-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+    .ba-label{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      font-weight:900;
+      font-size:14px;
+      border-bottom:1px solid var(--line);
+    }
+    .ba-label.before{
+      background:linear-gradient(180deg, #f7f7f7, #f0f2f2);
+      color:#5f6f75;
+    }
+    .ba-label.after{
+      background:linear-gradient(180deg, #eef7f5, #e5f0ee);
+      color:var(--brand);
+    }
+    .ba-card img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      background:#eef2f3;
+    }
+
     .split{
-      display:grid; grid-template-columns:1fr 1fr; gap:24px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
     }
     .list{
-      margin:0; padding-left:1.2em; color:var(--muted);
+      margin:0;
+      padding-left:1.2em;
+      color:var(--muted);
     }
     .list li + li{margin-top:8px}
+
     .cta{
-      padding:42px 0 80px;
+      padding:46px 0 84px;
     }
     .cta-box{
       background:
-        linear-gradient(135deg, rgba(255,255,255,.98), rgba(245,249,250,.94)),
-        linear-gradient(135deg, rgba(31,75,87,.08), transparent);
-      border:1px solid var(--line); border-radius:28px; padding:34px; box-shadow:var(--shadow);
-      display:grid; grid-template-columns:1.05fr .95fr; gap:24px; align-items:center;
+        linear-gradient(135deg, rgba(255,255,255,.98), rgba(244,248,248,.94)),
+        linear-gradient(135deg, rgba(38,70,83,.08), transparent);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:36px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:1.04fr .96fr;
+      gap:24px;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:radial-gradient(circle at top right, rgba(181,137,75,.12), transparent 22%);
+      pointer-events:none;
     }
     .contact-card{
-      background:#fff; border:1px solid var(--line); border-radius:22px; padding:24px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+      position:relative;
+      z-index:1;
     }
-    .contact-card p{margin:.2em 0; color:var(--muted)}
-    .contact-card strong{color:var(--brand)}
+    .contact-card p{
+      margin:.25em 0;
+      color:var(--muted);
+    }
+    .contact-card strong{
+      color:var(--brand);
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
     footer{
-      padding:28px 0 38px; color:#6e7d83; font-size:13px;
-      border-top:1px solid rgba(31,75,87,.08);
+      padding:28px 0 40px;
+      color:#6e7d83;
+      font-size:13px;
+      border-top:1px solid rgba(38,70,83,.08);
+      background:rgba(255,255,255,.45);
     }
-    .small{font-size:13px; color:#7a898f}
+    .small{
+      font-size:13px;
+      color:#7a898f;
+    }
+
     @media (max-width: 980px){
-      .hero-wrap, .cta-box, .split{grid-template-columns:1fr}
-      .pain-grid, .strength-grid, .gallery, .band-grid, .faq-grid{grid-template-columns:1fr}
-      .flow-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
-      .nav a:not(.cta-mini){display:none}
-      .hero{padding-top:46px}
+      .hero-wrap,
+      .cta-box,
+      .split{
+        grid-template-columns:1fr;
+      }
+      .pain-grid,
+      .strength-grid,
+      .band-grid,
+      .faq-grid{
+        grid-template-columns:1fr;
+      }
+      .flow-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+      .ba{
+        grid-template-columns:1fr;
+      }
+      .nav a:not(.cta-mini){
+        display:none;
+      }
+      .hero{
+        padding-top:48px;
+      }
     }
+
     @media (max-width: 640px){
       .flow-grid{grid-template-columns:1fr}
       .hero-points{grid-template-columns:1fr}
       .container{width:min(calc(100% - 22px), var(--max))}
-      .card, .cta-box, .contact-card, .gallery-text{padding:18px}
+      .card, .cta-box, .contact-card, .work-item{padding:18px}
       .topbar-inner{padding:12px 0}
-      h1{font-size:34px}
+      h1{font-size:35px}
+      .ba-card img{height:260px}
+      .work-title-row{align-items:flex-start}
     }
   </style>
 
@@ -216,10 +553,10 @@
     "@type":"LocalBusiness",
     "name":"株式会社カンワース",
     "url":"https://kanworth.github.io/renovation/",
-    "image":"https://kanworth.github.io/renovation/images/living.png",
-    "description":"内装だけでなく、床下・湿気・カビ・劣化状態まで見据えたリノベーションの案内ページです。",
+    "image":"https://kanworth.github.io/renovation/images/living_after.jpg",
+    "description":"古い住宅を、次に使いやすい状態へ整えるリノベーションの案内ページです。",
     "areaServed":["つくば市","牛久市","茨城県南エリア"],
-    "serviceType":["リノベーション","リフォーム","原状回復","床下確認","カビ対策"]
+    "serviceType":["リノベーション","リフォーム","原状回復","空き家再生","内装改修"]
   }
   </script>
 </head>
@@ -242,17 +579,17 @@
       <div class="container hero-wrap">
         <div>
           <div class="eyebrow">見た目だけで終わらせないリノベーション</div>
-          <h1>住めるようにするだけではなく、<br>この先まで考えて整える。</h1>
+          <h1>古い家を、<br>次に使いやすい状態へ整える。</h1>
           <p class="lead">
-            株式会社カンワースのリノベーションは、内装の見た目をきれいにするだけではありません。
-            居室・水回り・細部の改修に加え、床下や湿気、カビの原因になりやすい部分まで確認し、
-            これから先も使いやすい住まいへ整えていきます。
+            株式会社カンワースのリノベーションは、ただ新しく見せるだけではありません。
+            居室・水回り・細部の改修を通して、古い住宅や空き家を、
+            次に住む人・使う人にとって使いやすい状態へ整えていきます。
           </p>
           <ul class="hero-points">
             <li>水回り・居室・建具まで一体で対応</li>
-            <li>床下・湿気・劣化状態も確認</li>
-            <li>原状回復から本格改修まで相談可能</li>
-            <li>写真で変化がわかる施工提案</li>
+            <li>古い住宅の再生・原状回復にも対応</li>
+            <li>空き家・中古住宅の活用相談も可能</li>
+            <li>施工前後が写真でわかる提案</li>
           </ul>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">まずは無料相談</a>
@@ -261,10 +598,10 @@
         </div>
 
         <div class="hero-card">
-          <img src="images/living.png" alt="リビングの施工前後。暗かった空間が明るく整ったリノベーション事例">
+          <img src="images/living_after.jpg" alt="リビング施工後。明るく整ったリノベーション事例">
           <div class="hero-note">
             <strong>施工前後で伝わる、空間の変化</strong>
-            <p>暗さ・古さ・使いにくさを残したままにせず、暮らしやすい状態へ整える施工を目指します。</p>
+            <p>暗さ・古さ・使いにくさを残したままにせず、次に使いやすい状態へ整える施工を目指しています。</p>
           </div>
         </div>
       </div>
@@ -283,7 +620,7 @@
         <div class="pain-grid">
           <article class="card">
             <h3>古い家をそのまま使うのが不安</h3>
-            <p>見える部分だけでなく、湿気や床下の状態も含めて確認したい方に向いています。</p>
+            <p>傷みや古さが目立つ家でも、使える部分を活かしながら整える方向でご相談いただけます。</p>
           </article>
           <article class="card">
             <h3>内装を一新したい</h3>
@@ -306,15 +643,15 @@
           </div>
           <div class="band-item">
             <strong>水回りの更新</strong>
-            <span>トイレ・洗面・キッチン・浴室など、日常で差が出る部分を整備。</span>
+            <span>キッチン・洗面など、毎日使う場所を使いやすく整備。</span>
           </div>
           <div class="band-item">
             <strong>細部まで手を入れる</strong>
-            <span>建具・廊下・階段・壁造作など、仕上がりの印象を左右する部分まで対応。</span>
+            <span>壁造作や建具まわりなど、印象を左右する部分まで丁寧に対応。</span>
           </div>
           <div class="band-item">
-            <strong>見えない部分も確認</strong>
-            <span>床下や湿気の状態も踏まえ、見た目だけで終わらせない方向でご提案。</span>
+            <strong>古い住宅の再生</strong>
+            <span>古さをそのままにせず、次に使いやすい状態へ立て直していきます。</span>
           </div>
         </div>
       </div>
@@ -326,24 +663,24 @@
           <div class="section-kicker">Strength</div>
           <h2>カンワースのリノベーションが選ばれる理由</h2>
           <p class="section-desc">
-            「おしゃれにする」だけではなく、「この先も使いやすいか」を重視して計画します。
+            見た目だけを変えるのではなく、住まいとしての使いやすさと再生力を重視しています。
           </p>
         </div>
         <div class="strength-grid">
           <article class="card">
             <div class="num">01</div>
-            <h3>部屋単体ではなく、家全体で考える</h3>
-            <p>一部屋だけきれいでも、生活導線やほかの場所との落差が大きいと満足度は下がります。全体バランスを見ながら整えます。</p>
+            <h3>部屋単体ではなく、全体で考える</h3>
+            <p>一部屋だけきれいでも、ほかとの落差が大きいと満足度は下がります。全体バランスを見ながら整えます。</p>
           </article>
           <article class="card">
             <div class="num">02</div>
             <h3>見た目と実用性の両方を重視</h3>
-            <p>古い家特有の暗さ、使いにくさ、手入れのしづらさを減らし、日常で使いやすい状態を目指します。</p>
+            <p>古い家特有の暗さ、使いにくさ、古びた印象を減らし、日常で使いやすい状態を目指します。</p>
           </article>
           <article class="card">
             <div class="num">03</div>
-            <h3>床下・湿気・カビの視点を持てる</h3>
-            <p>内装工事だけでなく、湿気や床下環境が関係するケースも踏まえてご相談いただけます。</p>
+            <h3>施工前後で変化がわかる</h3>
+            <p>写真で比較できる施工が多いため、仕上がりのイメージを持っていただきやすいのも強みです。</p>
           </article>
         </div>
       </div>
@@ -353,60 +690,122 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Works</div>
-          <h2>施工前後がわかる実例</h2>
+          <h2>施工前後が一目でわかるリノベーション事例</h2>
           <p class="section-desc">
-            牛久市南の現場写真をもとに、空間の変化が伝わりやすい箇所を掲載しています。
+            見た目だけでなく、空間の印象や使いやすさがどう変わるかを、施工前後写真でご確認いただけます。
           </p>
         </div>
 
-        <div class="gallery">
-          <article class="gallery-item">
-            <img src="images/kitchen.png" alt="キッチンの施工前後。古い流し台の空間が明るく整った事例">
-            <div class="gallery-text">
-              <h3>キッチン</h3>
-              <p>古さが目立つ状態から、明るくすっきりした印象へ。日常で最も使用頻度の高い場所の変化は、住みやすさに直結します。</p>
+        <div class="works">
+
+          <article class="work-item">
+            <div class="work-title-row">
+              <h3>和室の再生</h3>
+              <span class="work-badge">Before / After</span>
+            </div>
+            <p class="caption">古い和室を、明るく整った空間へ。部屋の印象が大きく変わる代表的な施工例です。</p>
+            <div class="ba">
+              <div class="ba-card">
+                <div class="ba-label before">施工前</div>
+                <img src="images/washitsu_before.jpg" alt="和室施工前。古い和室の状態">
+              </div>
+              <div class="ba-card">
+                <div class="ba-label after">施工後</div>
+                <img src="images/washitsu_after.jpg" alt="和室施工後。整った和室の状態">
+              </div>
             </div>
           </article>
 
-          <article class="gallery-item">
-            <img src="images/washitsu.png" alt="和室の施工前後。畳の部屋が明るく整った事例">
-            <div class="gallery-text">
-              <h3>和室</h3>
-              <p>既存の雰囲気を活かしながら、清潔感と整った印象を出すことで、来客時にも見せやすい空間に変わります。</p>
+          <article class="work-item">
+            <div class="work-title-row">
+              <h3>リビングの改善</h3>
+              <span class="work-badge">Before / After</span>
+            </div>
+            <p class="caption">暗さや古さが残る空間を、明るく使いやすいリビングへ。家全体の印象にもつながる重要な部分です。</p>
+            <div class="ba">
+              <div class="ba-card">
+                <div class="ba-label before">施工前</div>
+                <img src="images/living_before.jpg" alt="リビング施工前。古い床と傷んだ障子が見える状態">
+              </div>
+              <div class="ba-card">
+                <div class="ba-label after">施工後</div>
+                <img src="images/living_after.jpg" alt="リビング施工後。フローリング化され明るくなった状態">
+              </div>
             </div>
           </article>
 
-          <article class="gallery-item">
-            <img src="images/washstand.png" alt="洗面台の施工前後。古い洗面スペースが使いやすくなった事例">
-            <div class="gallery-text">
-              <h3>洗面スペース</h3>
-              <p>狭く古さを感じやすい洗面まわりも、設備更新と内装の整理で、毎日使いやすい空間へ整います。</p>
+          <article class="work-item">
+            <div class="work-title-row">
+              <h3>壁造作・内装改善</h3>
+              <span class="work-badge">Before / After</span>
+            </div>
+            <p class="caption">傷みや古さが見えやすい壁面も、仕上がりの印象を左右する大事な部分。細かい施工力が伝わる事例です。</p>
+            <div class="ba">
+              <div class="ba-card">
+                <div class="ba-label before">施工前</div>
+                <img src="images/wall_before.jpg" alt="壁造作施工前。壁面の下地や古い状態が見える部屋">
+              </div>
+              <div class="ba-card">
+                <div class="ba-label after">施工後</div>
+                <img src="images/wall_after.jpg" alt="壁造作施工後。壁面が整い見た目が改善された部屋">
+              </div>
             </div>
           </article>
 
-          <article class="gallery-item">
-            <img src="images/living.png" alt="リビングの施工前後。暗かった居室が明るくなった事例">
-            <div class="gallery-text">
-              <h3>リビング</h3>
-              <p>部屋全体の印象が大きく変わる代表例です。暗さや古い印象を抑え、家の中心として使いやすい空間に整えます。</p>
+          <article class="work-item">
+            <div class="work-title-row">
+              <h3>キッチン交換</h3>
+              <span class="work-badge">Before / After</span>
+            </div>
+            <p class="caption">日常で最も使用頻度が高いキッチンは、交換による満足度が出やすい部分です。見た目も使い勝手も大きく変わります。</p>
+            <div class="ba">
+              <div class="ba-card">
+                <div class="ba-label before">施工前</div>
+                <img src="images/kitchen_before.jpg" alt="キッチン施工前。古いキッチン設備">
+              </div>
+              <div class="ba-card">
+                <div class="ba-label after">施工後</div>
+                <img src="images/kitchen_after.jpg" alt="キッチン施工後。新しいキッチン設備">
+              </div>
             </div>
           </article>
 
-          <article class="gallery-item">
-            <img src="images/wallwork.png" alt="壁造作の施工前後。内装壁面を整えたリノベーション事例">
-            <div class="gallery-text">
-              <h3>壁造作・内装調整</h3>
-              <p>部屋の印象を左右する壁面や造作の整備にも対応。仕上がりの完成度を高める細かな施工も大切にしています。</p>
+          <article class="work-item">
+            <div class="work-title-row">
+              <h3>洗面台交換</h3>
+              <span class="work-badge">Before / After</span>
+            </div>
+            <p class="caption">洗面スペースは生活感が出やすい場所です。設備更新により、毎日使う空間としての印象が大きく向上します。</p>
+            <div class="ba">
+              <div class="ba-card">
+                <div class="ba-label before">施工前</div>
+                <img src="images/washstand_before.jpg" alt="洗面台施工前。古い洗面スペース">
+              </div>
+              <div class="ba-card">
+                <div class="ba-label after">施工後</div>
+                <img src="images/washstand_after.jpg" alt="洗面台施工後。新しい洗面化粧台">
+              </div>
             </div>
           </article>
 
-          <article class="gallery-item">
-            <img src="images/crawlspace.png" alt="床下の確認写真。見えない部分まで確認する施工方針のイメージ">
-            <div class="gallery-text">
-              <h3>見えない部分の確認</h3>
-              <p>床下の状態は、湿気・劣化・カビの再発リスクを考えるうえで見逃せません。見える場所だけで終わらせない考え方も強みです。</p>
+          <article class="work-item">
+            <div class="work-title-row">
+              <h3>納戸・小部屋の改善</h3>
+              <span class="work-badge">Before / After</span>
+            </div>
+            <p class="caption">小さな空間でも、仕上がりの差は大きく出ます。使える部屋として再生できるかどうかが、物件全体の印象にも関わります。</p>
+            <div class="ba">
+              <div class="ba-card">
+                <div class="ba-label before">施工前</div>
+                <img src="images/storage_before.jpg" alt="納戸施工前。古い小部屋の状態">
+              </div>
+              <div class="ba-card">
+                <div class="ba-label after">施工後</div>
+                <img src="images/storage_after.jpg" alt="納戸施工後。フローリング化され整った小部屋">
+              </div>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -419,10 +818,10 @@
           <ul class="list">
             <li>中古住宅のリノベーション</li>
             <li>賃貸物件の原状回復・再生</li>
-            <li>水回りの更新や内装改修</li>
+            <li>キッチン・洗面などの設備更新</li>
             <li>和室・洋室・リビングの印象改善</li>
-            <li>建具・廊下・階段・細部の整備</li>
-            <li>床下や湿気が気になる住まいの相談</li>
+            <li>壁造作・建具・細部の整備</li>
+            <li>空き家の再生や活用前整備</li>
           </ul>
         </div>
         <div class="card">
@@ -432,7 +831,7 @@
             <li>必要なところを見極めて、無理のない計画で進める</li>
             <li>仕上がりだけでなく、その後の使いやすさも重視する</li>
             <li>写真や現地状況をもとに、わかりやすく整理して提案する</li>
-            <li>表面だけきれいにして終わらせず、原因になりやすい部分も確認する</li>
+            <li>表面だけ整えるのではなく、空間全体の印象を立て直す</li>
           </ul>
         </div>
       </div>
@@ -454,7 +853,7 @@
           <article class="card">
             <div class="num">2</div>
             <h3>現地確認</h3>
-            <p>内装・水回り・導線・必要に応じて床下などを確認します。</p>
+            <p>居室、水回り、細部の状態などを確認します。</p>
           </article>
           <article class="card">
             <div class="num">3</div>
@@ -491,12 +890,12 @@
             <p>はい。水回り、居室、細部の整備など、規模に応じてご相談いただけます。</p>
           </article>
           <article class="card">
-            <h3>床下や湿気のことも一緒に見てもらえますか？</h3>
-            <p>必要に応じて確認し、見える部分だけでは判断しにくい不安も含めてご相談いただけます。</p>
-          </article>
-          <article class="card">
             <h3>空き家や退去後物件でも相談できますか？</h3>
             <p>可能です。再活用や次の入居を見据えた整備としてご相談ください。</p>
+          </article>
+          <article class="card">
+            <h3>古い家でも対応できますか？</h3>
+            <p>状態によりますが、古さがある住宅の再生や立て直しもご相談いただけます。</p>
           </article>
         </div>
       </div>
@@ -521,7 +920,7 @@
           </div>
           <aside class="contact-card">
             <strong>株式会社カンワース</strong>
-            <p>リノベーション / 原状回復 / 内装改修 / 床下確認 / カビ・湿気の相談</p>
+            <p>リノベーション / 原状回復 / 内装改修 / 空き家再生 / 住まいの立て直し相談</p>
             <p>対応エリア：つくば市・牛久市・近隣エリア</p>
             <p>現地状況に応じてご提案内容は異なります。</p>
             <p>施工写真や状態確認をもとに、わかりやすく整理してご案内します。</p>
@@ -534,7 +933,7 @@
   <footer>
     <div class="container">
       <div>© 株式会社カンワース Renovation Landing Page</div>
-      <div class="small">GitHub Pagesにアップする際は、このフォルダごと配置し、URLに合わせて canonical と連絡先を最終調整してください。</div>
+      <div class="small">GitHub Pages公開用ページです。公開前に電話番号・メールアドレスを正式情報へ差し替えてください。</div>
     </div>
   </footer>
 </body>
