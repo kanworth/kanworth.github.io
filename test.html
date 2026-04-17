@@ -2,30 +2,35 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>株式会社カンワース｜プロフェッショナル住まい再生</title>
+<title>株式会社カンワース｜住まいの難題を論理的に解決する</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+  /* --- A. グローバル設定（マーケティング特化の配色とフォント） --- */
   :root {
-    --primary: #1a3c2a;    /* 深いフォレストグリーン */
-    --accent: #e67e22;     /* 現場の活気を感じさせるオレンジ */
+    --primary: #1a3c2a;    /* 深い緑：信頼と現場感 */
+    --accent: #e67e22;     /* 現場の活気・親しみやすさ */
+    --accent-hover: #d35400;
     --text: #2c3e50;
-    --light-bg: #f4f7f5;
+    --light-bg: #f8faf9;
   }
+
+  * { box-sizing: border-box; }
 
   body {
     margin: 0;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
     color: var(--text);
     background-color: #fff;
-    line-height: 1.7;
+    line-height: 1.8;
+    overflow-x: hidden; /* アニメーション用 */
   }
 
-  /* --- 1. ヒーローセクション（インパクト重視） --- */
+  /* --- B. ヒーローセクション（アニメ調プロヒーロー） --- */
   .hero {
     position: relative;
-    padding: 120px 20px;
-    background: linear-gradient(rgba(26, 60, 42, 0.85), rgba(26, 60, 42, 0.85)), 
-                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200'); /* 現場イメージの仮画像 */
+    padding: 160px 20px;
+    background: linear-gradient(135deg, rgba(26, 60, 42, 0.95), rgba(26, 60, 42, 0.95)), 
+                url('https://cdn.pixabay.com/photo/2021/11/02/09/23/illustration-6761924_1280.png'); /* アニメ調の施工人物のフリー画像 */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -34,31 +39,49 @@
   }
 
   .hero h1 {
-    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-size: clamp(2.2rem, 8vw, 4rem);
     margin: 0 0 20px;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     font-weight: 700;
   }
 
   .hero p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     max-width: 800px;
-    margin: 0 auto 30px;
-    opacity: 0.9;
+    margin: 0 auto 40px;
+    opacity: 0.95;
   }
 
-  /* --- 2. 専門力カード（グリッドレイアウト） --- */
+  .cta-button {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 22px 60px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
+    transition: all 0.2s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+  }
+
+  /* --- C. セクション共通設定 --- */
   .section-title {
     text-align: center;
-    margin: 80px 0 40px;
+    margin: 100px 0 60px;
   }
 
   .section-title h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary);
     position: relative;
     display: inline-block;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
   }
 
   .section-title h2::after {
@@ -67,84 +90,105 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
+    width: 80px;
+    height: 5px;
     background: var(--accent);
+    border-radius: 3px;
   }
 
+  /* --- D. 専門力カード（スクロールアニメーション付き） --- */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto 80px;
-    padding: 0 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 0 30px;
   }
 
   .card {
     background: var(--light-bg);
-    padding: 40px 30px;
-    border-radius: 12px;
+    padding: 50px 35px;
+    border-radius: 16px;
     border: 1px solid #e1e8e4;
     transition: all 0.3s ease;
     text-align: left;
+    position: relative;
+    opacity: 0; /* アニメーション開始前 */
+    animation: fade-in 0.8s ease forwards; /* アニメーション発動 */
+  }
+
+  /* スクロール時のフェードイン（簡易実装） */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-12px);
     background: #fff;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
     border-color: var(--accent);
   }
 
   .card h3 {
     color: var(--primary);
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accent);
+    padding-left: 15px;
   }
 
-  /* --- 3. 信頼のベタ塗りセクション --- */
+  /* --- E. 各専門ページ導線のボタン化 --- */
+  .card .specialist-link {
+    display: inline-block;
+    margin-top: 25px;
+    background: #fff;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+
+  .card:hover .specialist-link {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(230, 126, 34, 0.2);
+  }
+
+  /* --- F. 信頼のベタ塗りセクション --- */
   .dark-section {
     background: var(--primary);
     color: #fff;
-    padding: 80px 20px;
+    padding: 100px 30px;
     text-align: center;
   }
 
-  .cta-button {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    padding: 20px 50px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 10px 20px rgba(230, 126, 34, 0.3);
-    transition: transform 0.2s;
-  }
+  .dark-section h2 { color: #fff; }
+  .dark-section p { font-size: 1.15rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.9; }
 
-  .cta-button:hover {
-    transform: scale(1.05);
-  }
-
-  /* --- 4. レスポンシブ --- */
+  /* --- G. レスポンシブ設定 --- */
   @media (max-width: 768px) {
-    .hero { padding: 80px 20px; }
-    .grid { grid-template-columns: 1fr; }
+    .hero { padding: 100px 20px; }
+    .hero p { font-size: 1.1rem; }
+    .cta-button { font-size: 1.1rem; padding: 18px 40px; }
+    .grid { grid-template-columns: 1fr; gap: 30px; }
+    .card { padding: 35px 25px; }
   }
 </style>
 </head>
 <body>
 
-  <section class="hero">
+  <header class="hero">
     <h1>株式会社カンワース</h1>
-    <p>「現場の理」で、住まいの難題を解決する。<br>
+    <p>「現場の理」で、住まいの難題を論理的に解決する。<br>
     床下ホウ酸施工・カビ対策・空き家コンディション診断のスペシャリスト</p>
     <a href="#contact" class="cta-button">今すぐ無料で相談する</a>
-  </section>
+  </header>
 
   <main>
     <div class="section-title">
@@ -152,22 +196,22 @@
     </div>
 
     <div class="grid">
-      <div class="card">
+      <div class="card" style="animation-delay: 0.2s;">
         <h3>カビ対策のプロ</h3>
         <p>根源的な原因を特定し、防カビ・除菌を徹底。再発させない論理的な施工を行います。</p>
-        <a href="./moisture/" style="color: var(--accent); font-size: 0.9rem;">詳しく見る →</a>
+        <a href="./moisture/" class="specialist-link">詳しく見る</a>
       </div>
 
-      <div class="card">
+      <div class="card" style="animation-delay: 0.4s;">
         <h3>ホウ酸床下施工</h3>
         <p>安全で持続性の高い「ホウ酸」による防腐・防蟻。大切な家を長寿命化します。</p>
-        <a href="./borate/" style="color: var(--accent); font-size: 0.9rem;">詳しく見る →</a>
+        <a href="./borate/" class="specialist-link">詳しく見る</a>
       </div>
 
-      <div class="card">
+      <div class="card" style="animation-delay: 0.6s;">
         <h3>空き家調査・診断</h3>
         <p>行政との連携実績も豊富。建物のコンディションを詳細に診断し、最適な出口を提案します。</p>
-        <a href="./akiya-admin/" style="color: var(--accent); font-size: 0.9rem;">詳しく見る →</a>
+        <a href="./akiya-admin/" class="specialist-link">詳しく見る</a>
       </div>
       
       </div>
@@ -176,14 +220,15 @@
       <div style="max-width: 800px; margin: 0 auto;">
         <h2>代表直接施工へのこだわり</h2>
         <p>「下請けに丸投げしない」ことがカンワースの誇りです。代表自らがマキタの工具や糊付機を手に現場に入ります。調査から施工まで一貫しているからこそ、ズレのない、責任ある仕事が可能です。</p>
+        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 30px;">（※カビ、ホウ酸、空き家再生などの多角的なアプローチを一括で行える「現場の理」を解説します。）</p>
       </div>
     </section>
   </main>
 
-  <footer id="contact" style="padding: 60px 20px; text-align: center; background: #eee;">
+  <footer id="contact" style="padding: 80px 30px; text-align: center; background: #eee;">
     <p><strong>株式会社カンワース</strong></p>
     <p>電話：050-6861-2342 / メール：info@kan-worth.jp</p>
-    <p>&copy; 2026 Kanworth Inc.</p>
+    <p>&copy; 2026 Kanworth Inc. All Rights Reserved.</p>
   </footer>
 
 </body>
