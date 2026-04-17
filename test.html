@@ -2,258 +2,188 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>株式会社カンワース｜現場の理で、住まいの難題を論理的に解決する</title>
+<title>株式会社カンワース｜現場の理で住まいの難題を解決する</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  /* --- A. グローバル設定（建築プロフェッショナルの配色とフォント） --- */
   :root {
-    --primary: #1a3c2a;    /* 深い緑：信頼と現場感 */
-    --accent: #e67e22;     /* 現場の活気・親しみやすさ（マキタオレンジ） */
-    --accent-hover: #d35400;
-    --text: #2c3e50;
-    --text-sub: #556b5e;
-    --light-bg: #f4f7f5;
+    --primary: #1a3c2a;
+    --accent: #e67e22;
+    --bg-light: #f4f7f5;
+    --text: #333;
   }
-
-  * { box-sizing: border-box; }
 
   body {
     margin: 0;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
     color: var(--text);
-    background-color: #fff;
-    line-height: 1.8;
-    overflow-x: hidden;
+    line-height: 1.6;
   }
 
-  /* --- B. ヒーローセクション（プロの現場写真：マキタを持った技術者） --- */
+  /* --- ヘッダー --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+  }
+
+  .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+
+  /* --- ヒーローセクション（画像再現） --- */
   .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: linear-gradient(135deg, #fff 50%, #eef2f0 50%);
+    min-height: 500px;
+    padding: 0 5%;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px 0;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .hero-content span { color: var(--primary); }
+
+  .hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
     position: relative;
-    padding: 160px 20px;
-    background: linear-gradient(135deg, rgba(26, 60, 42, 0.96), rgba(26, 60, 42, 0.9)), 
-                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200'); /* 現場で工具を持つプロのフリー画像 */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    border-bottom: 8px solid var(--accent);
   }
 
-  /* ※注：ここに手賀さんの「マキタを持ったリアルな施工写真」を配置すると最強です。 */
-
-  .hero h1 {
-    font-size: clamp(2.2rem, 8vw, 4rem);
-    margin: 0 0 20px;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    line-height: 1.3;
+  /* 背景イラストの代わりとしてプレースホルダ。ご自身の画像があれば差し替え可能 */
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
   }
 
-  .hero p {
-    font-size: 1.3rem;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    opacity: 0.95;
-    font-weight: 300;
-  }
-
-  .cta-button {
+  .cta-btn {
     display: inline-block;
     background: var(--accent);
     color: #fff;
-    padding: 22px 60px;
-    border-radius: 60px;
+    padding: 15px 40px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.3rem;
-    box-shadow: 0 10px 25px rgba(230, 126, 34, 0.4);
-    transition: all 0.2s ease;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+    transition: 0.3s;
   }
 
-  .cta-button:hover {
-    background: var(--accent-hover);
-    transform: translateY(-3px);
-  }
+  .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(230, 126, 34, 0.5); }
 
-  /* --- C. セクション共通設定 --- */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 30px;
-  }
+  /* --- 専門力セクション --- */
+  .section-title { text-align: center; margin: 80px 0 40px; }
+  .section-title h2 { font-size: 2rem; color: var(--primary); }
 
-  .section-title {
-    text-align: center;
-    margin: 100px 0 60px;
-  }
-
-  .section-title h2 {
-    font-size: 2.5rem;
-    color: var(--primary);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 20px;
-    margin: 0;
-  }
-
-  .section-title h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 5px;
-    background: var(--accent);
-    border-radius: 3px;
-  }
-
-  /* --- D. 専門力カード（グリッドレイアウト） --- */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    margin-bottom: 100px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
   }
 
   .card {
-    background: var(--light-bg);
-    padding: 50px 35px;
-    border-radius: 16px;
-    border: 1px solid #e1e8e4;
-    transition: all 0.3s ease;
-    text-align: left;
-  }
-
-  .card:hover {
-    transform: translateY(-12px);
     background: #fff;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-    border-color: var(--accent);
-  }
-
-  .card h3 {
-    color: var(--primary);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    border-left: 5px solid var(--accent);
-    padding-left: 15px;
-  }
-
-  .card p {
-    color: var(--text-sub);
-    font-size: 1.05rem;
-  }
-
-  /* --- E. 各専門ページ導線のボタン化 --- */
-  .card .specialist-link {
-    display: inline-block;
-    margin-top: 25px;
-    background: #fff;
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    padding: 10px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.95rem;
-    transition: all 0.2s;
-  }
-
-  .card:hover .specialist-link {
-    background: var(--accent);
-    color: #fff;
-    box-shadow: 0 4px 8px rgba(230, 126, 34, 0.2);
-  }
-
-  /* --- F. 信頼のベタ塗りセクション（プロの道具箱） --- */
-  .dark-section {
-    background: var(--primary);
-    color: #fff;
-    padding: 100px 30px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--primary);
     text-align: center;
-    position: relative;
-    background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1200'); /* プロの道具箱のフリー画像 */
-    background-size: cover;
-    background-position: center;
   }
 
-  /* ※注：ここに手賀さんの「愛用ツールの写真（マキタのバッテリーや糊付機）」を配置すると最強です。 */
+  .card h3 { font-size: 1.4rem; margin-bottom: 15px; }
 
-  .dark-section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(26, 60, 42, 0.92); /* 重ねる色 */
+  /* --- こだわりセクション --- */
+  .feature-row {
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--bg-light);
+    padding: 80px 5%;
+    align-items: center;
   }
 
-  .dark-section .container {
-    position: relative; /* Beforeの上に置く */
-  }
+  .feature-text { flex: 1; min-width: 300px; padding: 20px; }
+  .feature-img { flex: 1; min-width: 300px; padding: 20px; text-align: center; }
+  .feature-img img { border-radius: 10px; max-width: 100%; }
 
-  .dark-section h2 { color: #fff; font-size: 2.2rem; margin-bottom: 30px; }
-  .dark-section p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 50px; opacity: 0.95; font-weight: 300; }
-
-  /* --- G. レスポンシブ設定 --- */
   @media (max-width: 768px) {
-    .hero { padding: 100px 20px; }
-    .hero p { font-size: 1.1rem; }
-    .section-title h2 { font-size: 2rem; }
-    .grid { grid-template-columns: 1fr; gap: 30px; }
-    .card { padding: 35px 25px; }
+    .hero { text-align: center; background: #fff; }
+    .hero-image { text-align: center; margin-top: 20px; }
   }
 </style>
 </head>
 <body>
 
-  <header class="hero">
-    <h1>株式会社カンワース</h1>
-    <p>「現場の理」で、住まいの難題を論理的に解決する。<br>
-    床下ホウ酸施工・カビ対策・空き家コンディション診断のスペシャリスト</p>
-    <a href="#contact" class="cta-button">今すぐ無料で相談する</a>
-  </header>
+<header>
+  <div class="logo">株式会社カンワース</div>
+  <nav>茨城県つくば市拠点</nav>
+</header>
 
-  <main class="container">
-    <div class="section-title">
-      <h2>カンワースの6つの専門力</h2>
+<section class="hero">
+  <div class="hero-content">
+    <h1>「<span>現場の理</span>」で、<br>住まいの難題を解決する。</h1>
+    <p>茨城県つくば市を中心に、代表の手賀が直接施工。<br>
+       カビ対策、ホウ酸床下施工、空き家の再生まで、<br>
+       論理的な裏付けに基づく確かな技術を提供します。</p>
+    <a href="mailto:info@kan-worth.jp" class="cta-btn">お手軽に無料相談してみる</a>
+  </div>
+  <div class="hero-image">
+    <img src="https://cdn.pixabay.com/photo/2021/11/02/09/23/illustration-6761924_1280.png" alt="施工イメージ">
+  </div>
+</section>
+
+<div class="section-title">
+  <h2>カンワースの6つの専門力</h2>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h3>カビ対策のプロ</h3>
+    <p>カビ対策のプロには、カビ対策を。防カビを施し、住方など多角的に対策を提案します。</p>
+  </div>
+  <div class="card">
+    <h3>ホウ酸床下施工</h3>
+    <p>ホウ酸床下施工を施し、空き家の再生まで、論理的な裏付けに基づく持続的な技術を敷きます。</p>
+  </div>
+  <div class="card">
+    <h3>空き家のプロ調査</h3>
+    <p>空き家のプロ調査を繋ぎ、空き家の再生的に技術を敷かします。</p>
+  </div>
+</div>
+
+<section class="feature-row">
+  <div class="feature-img">
+    <div style="background:#ddd; width:100%; height:300px; display:flex; align-items:center; justify-content:center; border-radius:10px;">
+      <span style="font-weight:bold;">Hiβ-Premio R 稼働中</span>
     </div>
+  </div>
+  <div class="feature-text">
+    <h2>最高峰の道具へのこだわり</h2>
+    <p>壁紙施工の要となる糊付機には、高性能な <strong>Hiβ-Premio R</strong> を導入。代表自らがマキタの工具を手に、一切の妥協を許さない精度で現場を仕上げます。道具へのこだわりは、お客様の住まいへの誠実さの証です。</p>
+  </div>
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <h3>カビ対策のプロ</h3>
-        <p>根源的な原因を特定し、防カビ・除菌を徹底。再発させない論理的な施工を行います。</p>
-        <a href="./moisture/" class="specialist-link">詳しく見る</a>
-      </div>
-
-      <div class="card">
-        <h3>ホウ酸床下施工</h3>
-        <p>安全で持続性の高い「ホウ酸」による防腐・防蟻。大切な家を長寿命化します。</p>
-        <a href="./borate/" class="specialist-link">詳しく見る</a>
-      </div>
-
-      <div class="card">
-        <h3>空き家調査・診断</h3>
-        <p>行政との連携実績も豊富。建物のコンディションを詳細に診断し、最適な出口を提案します。</p>
-        <a href="./akiya-admin/" class="specialist-link">詳しく見る</a>
-      </div>
-      
-      </div>
-  </main>
-
-  <section class="dark-section">
-    <div class="container">
-      <h2>代表直接施工へのこだわり</h2>
-      <p>「下請けに丸投げしない」ことがカンワースの誇りです。代表自らがマキタの工具や糊付機（Hiβ-Premio R）を手に現場に入ります。調査から施工まで一貫しているからこそ、ズレのない、責任ある仕事が可能です。</p>
-      <div style="font-size: 4rem;">🔧🔨</div>
-    </div>
-  </section>
-
-  <footer id="contact" style="padding: 80px 30px; text-align: center; background: #eee;">
-    <p><strong>株式会社カンワース</strong></p>
-    <p>電話：050-6861-2342 / メール：info@kan-worth.jp</p>
-    <p style="font-size: 0.9rem; color: #666; margin-top: 20px;">〒305-0045 茨城県つくば市梅園2-1-15 スプリングテックビル4F</p>
-    <p>&copy; 2026 Kanworth Inc. All Rights Reserved.</p>
-  </footer>
+<footer style="background: var(--primary); color: #fff; padding: 60px 5%; text-align: center;">
+  <p><strong>株式会社カンワース</strong></p>
+  <p>〒305-0045 茨城県つくば市梅園2-1-15 スプリングテックビル4F</p>
+  <p>&copy; 2026 Kanworth Inc.</p>
+</footer>
 
 </body>
 </html>
