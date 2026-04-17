@@ -5,14 +5,14 @@
 <title>株式会社カンワース｜現場の理で、住まいの難題を論理的に解決する</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  /* --- 1. グローバル設定（信頼の配色とフォント） --- */
+  /* --- A. グローバル設定（建築プロフェッショナルの配色とフォント） --- */
   :root {
     --primary: #1a3c2a;    /* 深い緑：信頼と現場感 */
-    --accent: #e67e22;     /* 現場の活気・親しみやすさ */
+    --accent: #e67e22;     /* 現場の活気・親しみやすさ（マキタオレンジ） */
     --accent-hover: #d35400;
     --text: #2c3e50;
     --text-sub: #556b5e;
-    --light-bg: #f8faf9;
+    --light-bg: #f4f7f5;
   }
 
   * { box-sizing: border-box; }
@@ -26,12 +26,12 @@
     overflow-x: hidden;
   }
 
-  /* --- 2. ヒーローセクション（マキタを持ったプロの手賀代表） --- */
+  /* --- B. ヒーローセクション（プロの現場写真：マキタを持った技術者） --- */
   .hero {
     position: relative;
     padding: 160px 20px;
     background: linear-gradient(135deg, rgba(26, 60, 42, 0.96), rgba(26, 60, 42, 0.9)), 
-                url('https://cdn.pixabay.com/photo/2021/11/02/09/23/illustration-6761924_1280.png'); /* アニメ調の施工人物のフリー画像 */
+                url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=1200'); /* 現場で工具を持つプロのフリー画像 */
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -39,7 +39,7 @@
     border-bottom: 8px solid var(--accent);
   }
 
-  /* ※注：ここに手賀さんの「マキタを持った写真」をアニメ加工したイラストを配置すると最強です。 */
+  /* ※注：ここに手賀さんの「マキタを持ったリアルな施工写真」を配置すると最強です。 */
 
   .hero h1 {
     font-size: clamp(2.2rem, 8vw, 4rem);
@@ -75,7 +75,7 @@
     transform: translateY(-3px);
   }
 
-  /* --- 3. セクション共通設定 --- */
+  /* --- C. セクション共通設定 --- */
   .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -108,7 +108,7 @@
     border-radius: 3px;
   }
 
-  /* --- 4. 専門力カード（グリッドレイアウト） --- */
+  /* --- D. 専門力カード（グリッドレイアウト） --- */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -145,43 +145,62 @@
     font-size: 1.05rem;
   }
 
-  /* --- 5. 「現場の理」セクション（図解＆ストーリー） --- */
-  .story-section {
+  /* --- E. 各専門ページ導線のボタン化 --- */
+  .card .specialist-link {
+    display: inline-block;
+    margin-top: 25px;
     background: #fff;
-    padding: 100px 0;
-    border-top: 1px solid #eee;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: all 0.2s;
   }
 
-  .story-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+  .card:hover .specialist-link {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(230, 126, 34, 0.2);
   }
 
-  .story-content h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 20px; }
-  .story-content p { color: var(--text-sub); margin-bottom: 30px; }
-  .story-icon { text-align: center; font-size: 5rem; color: var(--accent); }
-
-  /* --- 6. 信頼のベタ塗りセクション（道具のこだわり） --- */
+  /* --- F. 信頼のベタ塗りセクション（プロの道具箱） --- */
   .dark-section {
     background: var(--primary);
     color: #fff;
     padding: 100px 30px;
     text-align: center;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1200'); /* プロの道具箱のフリー画像 */
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* ※注：ここに手賀さんの「愛用ツールの写真（マキタのバッテリーや糊付機）」を配置すると最強です。 */
+
+  .dark-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(26, 60, 42, 0.92); /* 重ねる色 */
+  }
+
+  .dark-section .container {
+    position: relative; /* Beforeの上に置く */
   }
 
   .dark-section h2 { color: #fff; font-size: 2.2rem; margin-bottom: 30px; }
   .dark-section p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 50px; opacity: 0.95; font-weight: 300; }
 
-  /* --- 7. レスポンシブ設定 --- */
+  /* --- G. レスポンシブ設定 --- */
   @media (max-width: 768px) {
     .hero { padding: 100px 20px; }
     .hero p { font-size: 1.1rem; }
     .section-title h2 { font-size: 2rem; }
     .grid { grid-template-columns: 1fr; gap: 30px; }
-    .story-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-    .story-icon { order: -1; } /* アイコンを上に */
+    .card { padding: 35px 25px; }
   }
 </style>
 </head>
@@ -203,45 +222,28 @@
       <div class="card">
         <h3>カビ対策のプロ</h3>
         <p>根源的な原因を特定し、防カビ・除菌を徹底。再発させない論理的な施工を行います。</p>
-        <a href="./moisture/" style="color: var(--accent); font-size: 0.9rem;">詳しく見る →</a>
+        <a href="./moisture/" class="specialist-link">詳しく見る</a>
       </div>
 
       <div class="card">
         <h3>ホウ酸床下施工</h3>
         <p>安全で持続性の高い「ホウ酸」による防腐・防蟻。大切な家を長寿命化します。</p>
-        <a href="./borate/" style="color: var(--accent); font-size: 0.9rem;">詳しく見る →</a>
+        <a href="./borate/" class="specialist-link">詳しく見る</a>
       </div>
 
       <div class="card">
         <h3>空き家調査・診断</h3>
         <p>行政との連携実績も豊富。建物のコンディションを詳細に診断し、最適な出口を提案します。</p>
-        <a href="./akiya-admin/" style="color: var(--accent); font-size: 0.9rem;">詳しく見る →</a>
-      </div>
-    </div>
-
-    <section class="story-section">
-      <div class="story-grid">
-        <div class="story-icon">🍄</div>
-        <div class="story-content">
-          <h3>なぜカビが再発するのか？</h3>
-          <p>表面を拭き取るだけのカビ対策は、すぐに再発します。カンワースは「現場の理」に基づき、床下の含水率測定から原因を特定。カビの根源を断ち切る施工を行います。</p>
-        </div>
+        <a href="./akiya-admin/" class="specialist-link">詳しく見る</a>
       </div>
       
-      <div class="story-grid" style="margin-top: 80px;">
-        <div class="story-content">
-          <h3>なぜホウ酸が必要なのか？</h3>
-          <p>一般的な防蟻剤は数年で効果が消えますが、ホウ酸は揮発せず、半永久的に効果が持続します。安全性が高く、大切な家を次世代まで守り抜く、論理的な選択です。</p>
-        </div>
-        <div class="story-icon">🐜</div>
       </div>
-    </section>
   </main>
 
   <section class="dark-section">
     <div class="container">
       <h2>代表直接施工へのこだわり</h2>
-      <p>「下請けに丸投げしない」ことがカンワースの誇りです。代表自らがマキタの工具や糊付機を手に現場に入ります。調査から施工まで一貫しているからこそ、ズレのない、責任ある仕事が可能です。</p>
+      <p>「下請けに丸投げしない」ことがカンワースの誇りです。代表自らがマキタの工具や糊付機（Hiβ-Premio R）を手に現場に入ります。調査から施工まで一貫しているからこそ、ズレのない、責任ある仕事が可能です。</p>
       <div style="font-size: 4rem;">🔧🔨</div>
     </div>
   </section>
